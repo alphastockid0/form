@@ -47,9 +47,11 @@
         border: 1px solid black;
         padding: 2px;
     }
+
     th {
         text-align: start;
     }
+
     table {
         border-collapse: collapse;
         width: 100%;
@@ -77,42 +79,30 @@
                             <tr>
                                 <th>No. RM</th>
                                 <td>
-                                    <input type="text" name="norm" id="norm" class="form-input input-text">
+                                    <input type="text" name="norm" id="norm" class="col-12 form-input input-text">
                                 </td>
                             </tr>
                             <tr>
                                 <th>Nama</th>
                                 <td>
-                                    <input type="text" name="norm" id="norm" class="col-8 my-0 form-input input-text">
+                                    <input type="text" name="nama" id="nama" class="col-12 my-0 form-input input-text">
                                 </td>
                             </tr>
                             <tr>
                                 <th>Tgl. Lahir</th>
-                                <td>
-                                    <input type="text" name="norm" id="norm" class="col-8 my-0 form-input input-text">
+                                <td class="inline-block mid">
+                                    <input type="date" name="tglLahir" id="tglLahir" class="col-6 my-0 form-input input-text">
+                                    <div class="mx-0 my-0 py-0 col-3 py-1">
+                                        <input class="form-input mx-1" type="checkbox" name="pria" id="pria">
+                                        <label class="form-label mx-1" for="pria">L</label>
+                                    </div>
+                                    <div class="mx-0 my-0 py-0 col-3 py-1">
+                                        <input class="form-input mx-1" type="checkbox" name="wanita" id="wanita">
+                                        <label class="form-label mx-1" for="wanita">P</label>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
-                        <!-- <div class="inline-block mid">
-                            
-                        </div>
-                        <div class="inline-block mid border-top border-2 border-dark mid">
-                            <h5 class="col-4 my-0 py-1 text-start border-right border-2 border-dark">Nama</h5>
-                            <input type="text" name="norm" id="norm" class="col-8 my-0 form-input input-text">
-                        </div>
-                        <div class="inline-block mid border-top border-2 border-dark mid">
-                            <h5 class="col-4 my-0 py-1 text-start border-right border-2 border-dark">Tgl. Lahir</h5>
-                            <input type="date" name="tglLahir" id="tglLahir" class="col-4 my-0 form-input input-text">
-                            <div class="mx-0 my-0 py-0 col-2 py-1">
-                                <input class="form-input mx-1" type="checkbox" name="pria" id="pria">
-                                <label class="form-label mx-1" for="pria">L</label>
-                            </div>
-                            <div class="mx-0 my-0 py-0 col-2 py-1">
-                                <input class="form-input mx-1" type="checkbox" name="wanita" id="wanita">
-                                <label class="form-label mx-1" for="wanita">P</label>
-                            </div>
-
-                        </div> -->
                     </div>
                 </div>
             </div>
