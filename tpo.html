@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    .input-text {
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner .col {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
+            </div>
+            <div class="col col-md-6 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">PERSIAPAN OPERASI</h3>
+            </div>
+            <div class="col col-md-4">
+                <div class="row inner">
+                    <div class="col col-md-3">No. RM</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="norm" id="norm">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Nama</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="nama" id="nama">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Tgl. Lahir</div>
+                    <div class="col col-md-9 inline-block mid px-1">
+                        <input type="date" name="tglLahir" id="tglLahir" class="col-6 px-1 my-0 input-text">
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="pria" id="pria">
+                            <label class="form-label mx-1" for="pria">L</label>
+                        </div>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="wanita" id="wanita">
+                            <label class="form-label mx-1" for="wanita">P</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="fw-1 text-center mb-0 py-1">Pre Operasi oleh Perawat rawat inap dan timbang
+                    terima dengan perawat kamar bedah</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-6 col-md-6">
+                <h5 class="text-center">Kelengkapan RM Pasien</h5>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="ic_bedah1" id="ic_bedah">
+                    <input class="mx-1" type="checkbox" name="ic_bedah2" id="ic_bedah">
+                    <label class="form-label mx-1" for="ic_bedah">IC Bedah</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="ic_anestesi1" id="ic_anestesi">
+                    <input class="mx-1" type="checkbox" name="ic_anestesi2" id="ic_anestesi">
+                    <label class="form-label mx-1" for="ic_anestesi">IC anestesi</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="foto_rontgen1" id="foto_rontgen">
+                    <input class="mx-1" type="checkbox" name="foto_rontgen2" id="foto_rontgen">
+                    <label class="form-label mx-1" for="foto_rontgen">Foto Rontgen</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="ekg1" id="ekg">
+                    <input class="mx-1" type="checkbox" name="ekg2" id="ekg">
+                    <label class="form-label mx-1" for="ekg">EKG</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="hasil_lab1" id="hasil_lab">
+                    <input class="mx-1" type="checkbox" name="hasil_lab2" id="hasil_lab">
+                    <label class="form-label mx-1" for="hasil_lab">Hasil Laboratorium</label>
+                </div>
+            </div>
+            <div class="col col-6 col-md-6">
+                <h5 class="text-center">Riwayat Penyakit Kronis</h5>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="dm1" id="dm">
+                    <input class="mx-1" type="checkbox" name="dm2" id="dm">
+                    <label class="form-label mx-1" for="dm">DM</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="tb_paru1" id="tb_paru">
+                    <input class="mx-1" type="checkbox" name="tb_paru2" id="tb_paru">
+                    <label class="form-label mx-1" for="tb_paru">TB Paru</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="hipertensi1" id="hipertensi">
+                    <input class="mx-1" type="checkbox" name="hipertensi2" id="hipertensi">
+                    <label class="form-label mx-1" for="hipertensi">Hipertensi</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="hepatitis1" id="hepatitis">
+                    <input class="mx-1" type="checkbox" name="hepatitis2" id="hepatitis">
+                    <label class="form-label mx-1" for="hepatitis">Hepatitis B/C/A</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="hiv_aids1" id="hiv_aids">
+                    <input class="mx-1" type="checkbox" name="hiv_aids2" id="hiv_aids">
+                    <label class="form-label mx-1" for="hiv_aids">HIV / AIDS</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12 mb-0">
+                <h5 class="fw-1 text-center mb-0 py-1">Persiapan Pasien</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-6 col-md-6">
+                <div class="form-group mb-0 mt-2">
+                    <input class="mx-1" type="checkbox" name="aksesoris1" id="aksesoris">
+                    <input class="mx-1" type="checkbox" name="aksesoris2" id="aksesoris">
+                    <label class="form-label mx-1" for="aksesoris">Aksesoris Sudah Dilepas</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="bidai1" id="bidai">
+                    <input class="mx-1" type="checkbox" name="bidai2" id="bidai">
+                    <label class="form-label mx-1" for="bidai">Terpasang Bidai</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="infus1" id="infus">
+                    <input class="mx-1" type="checkbox" name="infus2" id="infus">
+                    <label class="form-label mx-1" for="infus">Terpasang Infus</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="ngt1" id="ngt">
+                    <input class="mx-1" type="checkbox" name="ngt2" id="ngt">
+                    <label class="form-label mx-1" for="ngt">Terpasang NGT</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="dc1" id="dc">
+                    <input class="mx-1" type="checkbox" name="dc2" id="dc">
+                    <label class="form-label mx-1" for="dc">Terpasang DC</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="latihan_batuk1" id="latihan_batuk">
+                    <input class="mx-1" type="checkbox" name="latihan_batuk2" id="latihan_batuk">
+                    <label class="form-label mx-1" for="latihan_batuk">Latihan Batuk Efektif</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="edu_mobilisasi_dini1" id="edu_mobilisasi_dini">
+                    <input class="mx-1" type="checkbox" name="edu_mobilisasi_dini2" id="edu_mobilisasi_dini">
+                    <label class="form-label mx-1" for="edu_mobilisasi_dini">Edukasi Mobilisasi Dini</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="latihan_nafas_dalam1" id="latihan_nafas_dalam">
+                    <input class="mx-1" type="checkbox" name="latihan_nafas_dalam2" id="latihan_nafas_dalam">
+                    <label class="form-label mx-1" for="latihan_nafas_dalam">Latihan Nafas Dalam</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="del_pewarna_kuku1" id="del_pewarna_kuku">
+                    <input class="mx-1" type="checkbox" name="del_pewarna_kuku2" id="del_pewarna_kuku">
+                    <label class="form-label mx-1" for="del_pewarna_kuku">Hapus Pewarna Kuku</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="gigi_palsu1" id="gigi_palsu">
+                    <input class="mx-1" type="checkbox" name="gigi_palsu2" id="gigi_palsu">
+                    <label class="form-label mx-1" for="gigi_palsu">Gigi Palsu Sudah Dilepas</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="no_makeup1" id="no_makeup">
+                    <input class="mx-1" type="checkbox" name="no_makeup2" id="no_makeup">
+                    <label class="form-label mx-1" for="no_makeup">Tidak Memakai Make Up</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="no_softlens1" id="no_softlens">
+                    <input class="mx-1" type="checkbox" name="no_softlens2" id="no_softlens">
+                    <label class="form-label mx-1" for="no_softlens">Soft Lens Sudah Dilepas</label>
+                </div>
+            </div>
+            <div class="col col-6 col-md-6">
+                <div class="form-group mb-0 mt-2">
+                    <input class="mx-1" type="checkbox" name="gelang_id1" id="gelang_id">
+                    <input class="mx-1" type="checkbox" name="gelang_id2" id="gelang_id">
+                    <label class="form-label mx-1" for="gelang_id">Terpasang Gelang Identitas</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="cukur_bersih1" id="cukur_bersih">
+                    <input class="mx-1" type="checkbox" name="cukur_bersih2" id="cukur_bersih">
+                    <label class="form-label mx-1" for="cukur_bersih">Pencukuran dan Pembersihan daerah
+                        operasi</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="lavement1" id="lavement">
+                    <input class="mx-1" type="checkbox" name="lavement2" id="lavement">
+                    <label class="form-label mx-1" for="lavement">Lavement</label>
+                </div>
+                <div class="form-group mb-0">
+                    <input class="mx-1" type="checkbox" name="puasa1" id="puasa">
+                    <input class="mx-1" type="checkbox" name="puasa2" id="puasa">
+                    <label class="form-label mx-1" for="puasa">Puasa Mulai Jam</label>
+                    <input type="time" name="waktu_puasa" id="puasa">
+                </div>
+
+                <h5 class="text-center mt-3 mb-3">Premedikasi</h5>
+
+                <div class="mb-3 inline-block">
+                    <label class="form-label" for="prem1">1.</label>
+                    <input type="text" name="prem1" id="prem1" class="col-6 input-text">
+                    <label for="jamprem1">Jam</label>
+                    <input type="time" name="jamprem1" id="jamprem1" class="col-2 input-text">
+                </div>
+                <div class="mb-3 inline-block">
+                    <label for="prem2">2.</label>
+                    <input type="text" name="prem2" id="prem2" class="col-6 input-text">
+                    <label for="jamprem2">Jam</label>
+                    <input type="time" name="jamprem2" id="jamprem2" class="col-2 input-text">
+                </div>
+                <div class="mb-3 inline-block">
+                    <label for="prem3">3.</label>
+                    <input type="text" name="prem3" id="prem3" class="col-6 input-text">
+                    <label for="jamprem3">Jam</label>
+                    <input type="time" name="jamprem3" id="jamprem3" class="col-2 input-text">
+                </div>
+                <div class="mb-0">
+                    <input class="mx-1" type="checkbox" name="antibiotik1" id="antibiotik">
+                    <input class="mx-1" type="checkbox" name="antibiotik2" id="antibiotik">
+                    <label class="form-label mx-1" for="antibiotik">Antibiotik Profilaksis</label>
+
+                    <input type="text" name="antibio" id="antibio" class="col-4 input-text">
+                    <label for="jamantibio">Jam</label>
+                    <input type="time" name="jamantibio" id="jamantibio" class="col-2 input-text">
+                </div>
+                <div class="mb-0">
+                    <input class="mx-1" type="checkbox" name="cttAlergi1" id="cttAlergi">
+                    <input class="mx-1" type="checkbox" name="cttAlergi2" id="cttAlergi">
+                    <label class="form-label mx-1" for=" cttAlergi ">Catatan Alergi</label>
+
+                    <input type="text" name="catatanAlergi" id="catatanAlergi" class="col-8 input-text">
+                </div>
+                <div class="mb-3">
+                    <label for="reaksiAlergi">Reaksi Alergi</label>
+                    <input type="text" name="reaksiAlergi" id="reaksiAlergi" class="col-8 input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-12">
+                <div class="input-group py-2 mid text-center">
+                    <label for="jamSerahTerima">Jam Serah Terima : </label>
+                    <input type="text" name="jamSerahTerima" id="jamSerahTerima" class="col-4 form-input input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="form-group mt-2 text-center">
+                    <label for="ttd_prwt_ruangan">Perawat Ruangan</label>
+                    <input type="text" name="ttd_prwt_ruangan" id="ttd_prwt_ruangan"
+                        class="col-8 mt-5 form-input input-text">
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="form-group mt-2 text-center">
+                    <label for="ttd_prwt_ruangan">Perawat Ruangan</label>
+                    <input type="text" name="ttd_prwt_ruangan" id="ttd_prwt_ruangan"
+                        class="col-8 mt-5 form-input input-text">
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="form-group mt-2 text-center">
+                    <label for="ttd_prwt_ruangan">Perawat Ruangan</label>
+                    <input type="text" name="ttd_prwt_ruangan" id="ttd_prwt_ruangan"
+                        class="col-8 mt-5 form-input input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row text-start">
+            <p class="col">
+                Keterangan : <br>
+                * Kotak pertama diisi oleh perawat ruang rawat inap. <br>
+                * Kotak kedua diisi oleh perawat kamar bedah. <br>
+                * Beri tanda (&#10004;) jika kondisi pasien sesuai checklist. <br>
+                * Beri tanda (-) jika kondisi pasien tidak sesuai xhecklist. <br>
+            </p>
+        </div>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    .input-text {
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner .col {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
+            </div>
+            <div class="col col-md-6 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">VERIFIKASI PRA OPERASI DAN PENANDAAN LOKASI OPERASI</h3>
+            </div>
+            <div class="col col-md-4">
+                <div class="row inner">
+                    <div class="col col-md-3">No. RM</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="norm" id="norm">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Nama</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="nama" id="nama">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Tgl. Lahir</div>
+                    <div class="col col-md-9 inline-block mid px-1">
+                        <input type="date" name="tglLahir" id="tglLahir" class="col-6 px-1 my-0 input-text">
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="pria" id="pria">
+                            <label class="form-label mx-1" for="pria">L</label>
+                        </div>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="wanita" id="wanita">
+                            <label class="form-label mx-1" for="wanita">P</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="fw-1 py-1 col-6 text-center mt-3">Pengkajian Pra Operasi</h6>
+                <div class="input-group">
+                    <label class="fw-2" for="tglPpo">Tanggal</label>
+                    <input type="date" name="tglPpo" id="tglPpo" class="input-text col-md-2">
+                    <label class="fw-2" for="jamPpo">Jam</label>
+                    <input type="time" name="jamPpo" id="jamPpo" class="input-text col-md-1">
+                </div>
+                <div class="form-group mt-3">
+                    <input type="checkbox" name="subjektif" id="subjektif">
+                    <label class="fw-2 mx-2" for="subjektif">Data Subjektif (Anamnesis)</label>
+                    <div class="input-group mx-4">
+                        <textarea class="" name="subText" id="subjektif" cols="70" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="checkbox" name="objektif" id="objektif">
+                    <label class="fw-2 mx-2" for="objektif">Data objektif (Pemeriksaan Fisik)</label>
+                    <div class="input-group mx-4">
+                        <textarea class="" name="objText" id="objektif" cols="70" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="form-group mt-3">
+                    <label class="fw-2 mx-2" for="diagnosis">Diagnosis Pra Operasi</label>
+                    <div class="input-group mx-4">
+                        <textarea class="" name="diagText" id="diagnosis" cols="70" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label class="fw-2 mx-2" for="rencana">Rencana Operasi</label>
+                    <div class="input-group mx-4">
+                        <textarea class="" name="rencanaText" id="rencana" cols="70" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group mt-3 col-12">
+                    <label class="fw-2 mx-2" for="posisi">Posisi Pasien</label>
+                    <div class="form-group mx-4 mb-0 col-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="checkbox" name="supinasi" id="supinasi">
+                                <label class="fw-2 mx-2" for="supinasi">Supinasi</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="checkbox" name="pronasi" id="pronasi">
+                                <label class="fw-2 mx-2" for="pronasi">Pronasi</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mx-4 mb-0 col-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="checkbox" name="lateral" id="lateral">
+                                <label class="fw-2 mx-2" for="lateral">Lateral kanan / kiri</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="checkbox" name="sim" id="sim">
+                                <label class="fw-2 mx-2" for="sim">Sim kanan / kiri</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mx-4 mb-0 col-6">
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="checkbox" name="litotomi" id="litotomi">
+                                <label class="fw-2 mx-2" for="litotomi">Litotomi</label>
+                            </div>
+                            <div class="col-4">
+                                <input type="checkbox" name="other" id="other">
+                                <input class="col-8 mx-2 input-text" type="text" name="other1" id="other">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
