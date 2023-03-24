@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    .input-text {
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner .col {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
+            </div>
+            <div class="col col-md-6 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">PENGKAJIAN PRA SEDASI DAN PRA ANESTESI</h3>
+            </div>
+            <div class="col col-md-4">
+                <div class="row inner">
+                    <div class="col col-md-3">No. RM</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="norm" id="norm">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Nama</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="nama" id="nama">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Tgl. Lahir</div>
+                    <div class="col col-md-9 inline-block mid px-1">
+                        <input type="date" name="tglLahir" id="tglLahir" class="col-6 px-1 my-0 input-text">
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="pria" id="pria">
+                            <label class="form-label mx-1" for="pria">L</label>
+                        </div>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="wanita" id="wanita">
+                            <label class="form-label mx-1" for="wanita">P</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="input-group py-2 my-0">
+                    <label class="fw-2 mx-3" for="tglPengkajian">Tanggal Pengkajian</label>
+                    <input type="date" name="tglPengkajian" id="tglPengkajian" class="input-text col-md-2">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="row">
+                    <div class="form-group py-1 my-0 col-md-6">
+                        <label class="fw-2 mx-3" for="menikah_ya">Menikah : </label>
+                        <input type="checkbox" name="menikah_ya" id="menikah_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="menikah_ya">Ya</label>
+                        <input type="checkbox" name="menikah_no" id="menikah_no" class="input-text">
+                        <label class="fw-2 mx-3" for="menikah_no">Tidak</label>
+                    </div>
+                    <div class="form-group py-1 my-0 col-md-6">
+                        <label class="fw-2 mx-3" for="pekerjaan">Pekerjaan : </label>
+                        <input type="text" name="pekerjaan" id="pekerjaan" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="text-center py-1 my-0">KEBIASAAN</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="form-group py-1 my-0 col-md-7">
+                        <label class="fw-2 mx-3" for="merokok_ya">Merokok&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="merokok_ya" id="merokok_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="merokok_ya">Ya</label>
+                        <input type="checkbox" name="merokok_no" id="merokok_no" class="input-text">
+                        <label class="fw-2 mx-3" for="merokok_no">Tidak</label>
+                    </div>
+                    <div class="form-group py-1 my-0 col-md-5">
+                        <label for="qty_rokok">Sebanyak</label>
+                        <input type="text" name="qty_rokok" id="qty_rokok" class="input-text col-6">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group py-1 my-0 col-md-7">
+                        <label class="fw-2 mx-3" for="akohol_ya">Akohol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="akohol_ya" id="akohol_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="akohol_ya">Ya</label>
+                        <input type="checkbox" name="akohol_no" id="akohol_no" class="input-text">
+                        <label class="fw-2 mx-3" for="akohol_no">Tidak</label>
+                    </div>
+                    <div class="form-group py-1 my-0 col-md-5">
+                        <label for="qty_alkohol">Sebanyak</label>
+                        <input type="text" name="qty_alkohol" id="qty_alkohol" class="input-text col-6">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="form-group py-1 my-0 col-md-7">
+                        <label class="fw-2 mx-3" for="kopi_teh_soda_ya">Kopi/Teh/Soda&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="kopi_teh_soda_ya" id="kopi_teh_soda_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="kopi_teh_soda_ya">Ya</label>
+                        <input type="checkbox" name="kopi_teh_soda_no" id="kopi_teh_soda_no" class="input-text">
+                        <label class="fw-2 mx-3" for="kopi_teh_soda_no">Tidak</label>
+                    </div>
+                    <div class="form-group py-1 my-0 col-md-5">
+                        <label for="qty_kopi_teh_soda">Sebanyak</label>
+                        <input type="text" name="qty_kopi_teh_soda" id="qty_kopi_teh_soda" class="input-text col-6">
+                    </div>
+                </div>
+                <div class="form-group py-1 my-0">
+                    <label class="fw-2 mx-3" for="akohol_ya">Olahraga Rutin&nbsp;:&nbsp;</label>
+                    <input type="checkbox" name="akohol_ya" id="akohol_ya" class="input-text">
+                    <label class="fw-2 mx-3" for="akohol_ya">Ya</label>
+                    <input type="checkbox" name="akohol_no" id="akohol_no" class="input-text">
+                    <label class="fw-2 mx-3" for="akohol_no">Tidak</label>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="col-md-12 mid">
+                    <h6 class="my-0 py-1">PENGOBATAN : sebutkan dosis atau jumlah perhari</h6>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group col-md-7">
+                        <label for="resep">Obat resep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;</label>
+                        <input type="text" name="resep" id="resep" class="input-text">
+                    </div>
+                    <div class="row">
+                        <div class="form-group py-1 my-0 col-md-4">
+                            <label class="fw-2 mx-3" for="obt_antiSakit_ya">Obat Anti Sakit&nbsp;:&nbsp;</label>
+                            <input type="checkbox" name="obt_antiSakit_ya" id="obt_antiSakit_ya" class="input-text">
+                            <label class="fw-2 mx-3" for="obt_antiSakit_ya">Ya</label>
+                            <input type="checkbox" name="obt_antiSakit_no" id="obt_antiSakit_no" class="input-text">
+                            <label class="fw-2 mx-3" for="obt_antiSakit_no">Tidak</label>
+                        </div>
+                        <div class="form-group py-1 my-0 col-md-8">
+                            <label for="dosis_antiSakit">Dosis dan Frekuensi</label>
+                            <input type="text" name="dosis_antiSakit" id="dosis_antiSakit" class="input-text col-3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group py-1 my-0 col-md-12">
+                            <label class="fw-2 mx-3" for="obt_bebas_ya">Obat Bebas (vitamin,herbal)&nbsp;:&nbsp;</label>
+                            <input type="checkbox" name="obt_bebas_ya" id="obt_bebas_ya" class="input-text">
+                            <label class="fw-2 mx-3" for="obt_bebas_ya">Ya</label>
+                            <input type="checkbox" name="obt_bebas_no" id="obt_bebas_no" class="input-text">
+                            <label class="fw-2 mx-3" for="obt_bebas_no">Tidak</label>
+                            <input type="text" name="dosis_bebas" id="dosis_bebas" class="input-text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group py-1 my-0 col-md-4">
+                            <label class="fw-2 mx-3" for="obt_alergiObat_ya">Alergi Obat &nbsp;:&nbsp;</label>
+                            <input type="checkbox" name="obt_alergiObat_ya" id="obt_alergiObat_ya" class="input-text">
+                            <label class="fw-2 mx-3" for="obt_alergiObat_ya">Ya</label>
+                            <input type="checkbox" name="obt_alergiObat_no" id="obt_alergiObat_no" class="input-text">
+                            <label class="fw-2 mx-3" for="obt_alergiObat_no">Tidak</label>
+                        </div>
+                        <div class="form-group py-1 my-0 col-md-3">
+                            <label for="nama_alergiObat">Nama Obat</label>
+                            <input type="text" name="nama_alergiObat" id="nama_alergiObat" class="input-text col-7">
+                        </div>
+                        <div class="form-group py-1 my-0 col-md-3">
+                            <label for="reaksi_alergiObat">Reaksi Alergi</label>
+                            <input type="text" name="reaksi_alergiObat" id="reaksi_alergiObat" class="input-text col-7">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group py-1 my-0 col-md-6">
+                            <label class="fw-2 mx-3" for="alergiPlester_ya">Alergi Plester&nbsp;:&nbsp;</label>
+                            <input type="checkbox" name="alergiPlester_ya" id="alergiPlester_ya" class="input-text">
+                            <label class="fw-2 mx-3" for="alergiPlester_ya">Ya</label>
+                            <input type="checkbox" name="alergiPlester_no" id="alergiPlester_no" class="input-text">
+                            <label class="fw-2 mx-3" for="alergiPlester_no">Tidak</label>
+                        </div>
+                        <div class="form-group py-1 my-0 col-md-6">
+                            <label class="fw-2 mx-3" for="alergiMakanan_ya">Alergi Makanan&nbsp;:&nbsp;</label>
+                            <input type="checkbox" name="alergiMakanan_ya" id="alergiMakanan_ya" class="input-text">
+                            <label class="fw-2 mx-3" for="alergiMakanan_ya">Ya</label>
+                            <input type="checkbox" name="alergiMakanan_no" id="alergiMakanan_no" class="input-text">
+                            <label class="fw-2 mx-3" for="alergiMakanan_no">Tidak</label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="text-center py-1 my-0">RIWAYAT KELUARGA</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <p>Apakah Keluarga mendapatkan permasalahan seperti dibawah ini :</p>
+                <div class="row">
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3" for="perdarahanNormal_ya">Perdarahan Tidak
+                            Normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="perdarahanNormal_ya" id="perdarahanNormal_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="perdarahanNormal_ya">Ya</label>
+                        <input type="checkbox" name="perdarahanNormal_no" id="perdarahanNormal_no" class="input-text">
+                        <label class="fw-2 mx-3" for="perdarahanNormal_no">Tidak</label>
+                    </div>
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3" for="seranganJantung_ya">Serangan Jantung&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="seranganJantung_ya" id="seranganJantung_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="seranganJantung_ya">Ya</label>
+                        <input type="checkbox" name="seranganJantung_no" id="seranganJantung_no" class="input-text">
+                        <label class="fw-2 mx-3" for="seranganJantung_no">Tidak</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3" for="pembekuanDarah_ya">Pembekuan Darah Tidak
+                            Normal&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="pembekuanDarah_ya" id="pembekuanDarah_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="pembekuanDarah_ya">Ya</label>
+                        <input type="checkbox" name="pembekuanDarah_no" id="pembekuanDarah_no" class="input-text">
+                        <label class="fw-2 mx-3" for="pembekuanDarah_no">Tidak</label>
+                    </div>
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3"
+                            for="hipertensi_ya">Hipertensi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="hipertensi_ya" id="hipertensi_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="hipertensi_ya">Ya</label>
+                        <input type="checkbox" name="hipertensi_no" id="hipertensi_no" class="input-text">
+                        <label class="fw-2 mx-3" for="hipertensi_no">Tidak</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3"
+                            for="diabetes_ya">Diabetes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="diabetes_ya" id="diabetes_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="diabetes_ya">Ya</label>
+                        <input type="checkbox" name="diabetes_no" id="diabetes_no" class="input-text">
+                        <label class="fw-2 mx-3" for="diabetes_no">Tidak</label>
+                    </div>
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3"
+                            for="tuberkulose_ya">Tuberkulose&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="tuberkulose_ya" id="tuberkulose_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="tuberkulose_ya">Ya</label>
+                        <input type="checkbox" name="tuberkulose_no" id="tuberkulose_no" class="input-text">
+                        <label class="fw-2 mx-3" for="tuberkulose_no">Tidak</label>
+                    </div>
+                </div>
+
+                <label class="fw-2 mt-2" for="desk_rwtKeluarga">Jelaskan penyakit keluarga apabila dijawab "ya"</label>
+                <input type="text" name="desk_rwtKeluarga" id="desk_rwtKeluarga" class="input-text col-12 mb-3">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="text-center py-1 my-0">KOMUNIKASI</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="row py-2 my-0">
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3" for="bahasa">Bahasa</label>
+                        <input type="checkbox" name="bahasa_ID" id="bahasa" class="input-text">
+                        <label class="fw-2 mx-3" for="bahasa">INDONESIA</label>
+                        <input type="checkbox" name="bahasa_etc" id="bahasa_etc" class="input-text">
+                        <label class="fw-2 mx-3" for="bahasa_etc">Lainnya</label>
+                        <input type="text" name="text_bahasa_etc" id="bahasa_etc" class="input-text">
+                    </div>
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3"
+                            for="tuli_ya">Gangguan Pendengaran / Tuli &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="tuli_ya" id="tuli_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="tuli_ya">Ya</label>
+                        <input type="checkbox" name="tuli_no" id="tuli_no" class="input-text">
+                        <label class="fw-2 mx-3" for="tuli_no">Tidak</label>
+                    </div>
+                </div>
+                <div class="row py-2 my-0">
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3"
+                            for="buta_ya">Gangguan Penglihatan / Buta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="buta_ya" id="buta_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="buta_ya">Ya</label>
+                        <input type="checkbox" name="buta_no" id="buta_no" class="input-text">
+                        <label class="fw-2 mx-3" for="buta_no">Tidak</label>
+                    </div>
+                    <div class="form-group my-0 col-md-6">
+                        <label class="fw-2 mx-3"
+                            for="tunawicara_ya">Gangguan Bicara &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="tunawicara_ya" id="tunawicara_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="tunawicara_ya">Ya</label>
+                        <input type="checkbox" name="tunawicara_no" id="tunawicara_no" class="input-text">
+                        <label class="fw-2 mx-3" for="tunawicara_no">Tidak</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="text-center py-1 my-0">RIWAYAT PENYAKIT PASIEN</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <p>Apakah pasien pernah menderita penyakit dibawah ini?</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group my-0">
+                        <label class="fw-2 mx-3"
+                            for="rpp_perdarahan_ya">Perdarahan yang tidak normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="rpp_perdarahan_ya" id="rpp_perdarahan_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="rpp_perdarahan_ya">Ya</label>
+                        <input type="checkbox" name="rpp_perdarahan_no" id="rpp_perdarahan_no" class="input-text">
+                        <label class="fw-2 mx-3" for="rpp_perdarahan_no">Tidak</label>
+                    </div>
+                    <div class="form-group my-0">
+                        <label class="fw-2 mx-3"
+                            for="rpp_pembekuan_ya">Pembekuan darah tidak normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="rpp_pembekuan_ya" id="rpp_pembekuan_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="rpp_pembekuan_ya">Ya</label>
+                        <input type="checkbox" name="rpp_pembekuan_no" id="rpp_pembekuan_no" class="input-text">
+                        <label class="fw-2 mx-3" for="rpp_pembekuan_no">Tidak</label>
+                    </div>
+                    <div class="form-group my-0">
+                        <label class="fw-2 mx-3"
+                            for="rpp_perdarahan_ya">Perdarahan yang tidak normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        <input type="checkbox" name="rpp_perdarahan_ya" id="rpp_perdarahan_ya" class="input-text">
+                        <label class="fw-2 mx-3" for="rpp_perdarahan_ya">Ya</label>
+                        <input type="checkbox" name="rpp_perdarahan_no" id="rpp_perdarahan_no" class="input-text">
+                        <label class="fw-2 mx-3" for="rpp_perdarahan_no">Tidak</label>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

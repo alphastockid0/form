@@ -30,6 +30,7 @@
 </head>
 <style>
     .input-text {
+        height: 16px;
         border: none;
         border-bottom: 1px dotted black;
         background: #ffffff00;
@@ -112,11 +113,11 @@
         <div class="row">
             <div class="col col-md-12">
                 <h6 class="fw-1 py-1 col-6 text-center mt-3">Pengkajian Pra Operasi</h6>
-                <div class="input-group">
+                <div class="input-group col-md-6">
                     <label class="fw-2" for="tglPpo">Tanggal</label>
-                    <input type="date" name="tglPpo" id="tglPpo" class="input-text col-md-2">
+                    <input type="date" name="tglPpo" id="tglPpo" class="input-text col-3">
                     <label class="fw-2" for="jamPpo">Jam</label>
-                    <input type="time" name="jamPpo" id="jamPpo" class="input-text col-md-1">
+                    <input type="time" name="jamPpo" id="jamPpo" class="input-text col-2">
                 </div>
                 <div class="form-group mt-3">
                     <input type="checkbox" name="subjektif" id="subjektif">
@@ -150,7 +151,7 @@
                 </div>
                 <div class="form-group mt-3 col-12">
                     <label class="fw-2 mx-2" for="posisi">Posisi Pasien</label>
-                    <div class="form-group mx-4 mb-0 col-6">
+                    <div class="form-group mx-4 mb-0 col-md-6">
                         <div class="row">
                             <div class="col-4">
                                 <input type="checkbox" name="supinasi" id="supinasi">
@@ -162,7 +163,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group mx-4 mb-0 col-6">
+                    <div class="form-group mx-4 mb-0 col-md-6">
                         <div class="row">
                             <div class="col-4">
                                 <input type="checkbox" name="lateral" id="lateral">
@@ -174,7 +175,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group mx-4 mb-0 col-6">
+                    <div class="form-group mx-4 mb-0 col-md-6">
                         <div class="row">
                             <div class="col-4">
                                 <input type="checkbox" name="litotomi" id="litotomi">
@@ -189,7 +190,47 @@
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="input-group mid py-2">
+                    <label class="fw-2" for="estimasi">Estimasi Lama Operasi</label>
+                    <input type="text" name="estimasi" id="estimasi" class="input-text mx-2">
+                    <label class="fw-2" for="estimasi">Jam / Menit</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12 mid">
+                <div class="form-group mt-2 text-center col-md-4">
+                    <label class="mid" for="ttd_dokter_opt">Dokter Operator</label>
+                    <input type="text" name="ttd_dokter_opt" id="ttd_dokter_opt" class="mt-5 input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12 text-center">
+                <h6 class="fw-2 py-2 my-0">Berikan Tanda pada gambar sesuai dengan penanda lokasi operasi pada tubuh
+                    pasien</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-9">
+                <p>Berikan penandaan pada lokasi tubuh pasien dengan tanda lingkaran (O) <br><br> JANGAN menggunakan
+                    tanda silang (X)</p>
+            </div>
+            <div class="col col-md-3 col-sm-3">
+                <p>Deskripsi Singkat apabila tidak dapat dilakukan penanndaan pada tubuh pasien</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 col-sm-6"></div>
+            <div class="col col-md-3 col-sm-3"></div>
+            <div class="col col-md-3 col-sm-3">
+                <div class="form-group mt-3">
+                    <textarea class="" name="desk_lokasi" id="desk_lokasi" cols="40" rows="30"></textarea>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="HTML/vendor/global/global.min.js"></script>
