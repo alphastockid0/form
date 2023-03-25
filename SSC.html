@@ -81,14 +81,14 @@
 <body>
     <div class="container-fluid" id="iniPage">
         <div class="d-flex justify-content-end">
-            <h5 class="">RM.13.a.REV.01</h5>
+            <h5 class="">RM.13.d.REV.01</h5>
         </div>
         <div class="row">
             <div class="col col-md-2 text-center mid">
                 <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
             </div>
             <div class="col col-md-6 px-0 mx-0 mid">
-                <h3 class="fw-1 text-center">VERIFIKASI PRA OPERASI DAN PENANDAAN LOKASI OPERASI</h3>
+                <h3 class="fw-1 text-center">DAFTAR KESELAMATAN PASIEN OPERASI<br>(SURGICAL SAFETY CHECKLIST)</h3>
             </div>
             <div class="col col-md-4">
                 <div class="row inner">
@@ -120,125 +120,72 @@
             </div>
         </div>
         <div class="row">
-            <div class="col col-md-12">
-                <h6 class="fw-1 py-1 col-6 text-center mt-3">Pengkajian Pra Operasi</h6>
-                <div class="input-group col-md-6">
-                    <label class="fw-2" for="tglPpo">Tanggal</label>
-                    <input type="date" name="tglPpo" id="tglPpo" class="input-text col-3">
-                    <label class="fw-2" for="jamPpo">Jam</label>
-                    <input type="time" name="jamPpo" id="jamPpo" class="input-text col-2">
-                </div>
-                <div class="form-group mt-3">
-                    <input type="checkbox" name="subjektif" id="subjektif">
-                    <label class="fw-2 mx-2" for="subjektif">Data Subjektif (Anamnesis)</label>
-                    <div class="input-group mx-4">
-                        <textarea class="" name="subText" id="subjektif" cols="70" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="form-group mt-3">
-                    <input type="checkbox" name="objektif" id="objektif">
-                    <label class="fw-2 mx-2" for="objektif">Data objektif (Pemeriksaan Fisik)</label>
-                    <div class="input-group mx-4">
-                        <textarea class="" name="objText" id="objektif" cols="70" rows="3"></textarea>
-                    </div>
-                </div>
+            <div class="col col-md-4 text-center">
+                <label for="signin" class="fw-bold mb-0 py-1"><strong>Sign In Jam :</strong></label>
+                <input type="time" name="signIn" id="signin" class="input-text">
+            </div>
+            <div class="col col-md-4 text-center">
+                <label for="timeOut" class="fw-bold mb-0 py-1"><strong>Time Out Jam :</strong></label>
+                <input type="time" name="timeOut" id="timeOut" class="input-text">
+            </div>
+            <div class="col col-md-4 text-center">
+                <label for="signOut" class="fw-bold mb-0 py-1"><strong>Sign Out Jam :</strong></label>
+                <input type="time" name="signOut" id="signOut" class="input-text">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-4 text-center">
+                <h6 class="fw-bold mb-0 py-0"><strong>Dilakukan sebelum induksi Anestesi</strong></h6>
+            </div>
+            <div class="col col-md-4 text-center">
+                <h6 class="fw-bold mb-0 py-0"><strong>Dilakukan sebelum insisi</strong></h6>
+            </div>
+            <div class="col col-md-4 text-center">
+                <h6 class="fw-bold mb-0 py-0"><strong>Dilakukan sebelum menutup kulit</strong></h6>
             </div>
         </div>
         <div class="row">
-            <div class="col col-md-12">
-                <div class="form-group mt-3">
-                    <label class="fw-2 mx-2" for="diagnosis">Diagnosis Pra Operasi</label>
-                    <div class="input-group mx-4">
-                        <textarea class="" name="diagText" id="diagnosis" cols="70" rows="3"></textarea>
-                    </div>
+            <div class="col col-md 4">
+                <div class="form-group mt-1">
+                    <input class="form-input" type="checkbox" name="konfirm" id="konfirm">
+                    <label class="mx-3" for="konfirm">KONFIRMASI</label>
                 </div>
-                <div class="form-group mt-3">
-                    <label class="fw-2 mx-2" for="rencana">Rencana Operasi</label>
-                    <div class="input-group mx-4">
-                        <textarea class="" name="rencanaText" id="rencana" cols="70" rows="3"></textarea>
+                <div class="row">
+                    <div class="col-md-10">
+                        <label class="mx-5" for="ID_pasien">Identitas Pasien</label>
+                        <label class="mx-5" for="gelang">Gelang sudah sesuai</label>
+                        <label class="mx-5" for="lokasi_OP">Lokasi Operasi</label>
+                        <label class="mx-5" for="Prosedur_operasi">Prosedur Operasi</label>
+                        <label class="mx-5" for="ico">Informed Consent Operasi</label>
+                        <label class="mx-5" for="ica">Informed Consent Anestesi</label>
                     </div>
-                </div>
-                <div class="form-group mt-3 col-12">
-                    <label class="fw-2 mx-2" for="posisi">Posisi Pasien</label>
-                    <div class="form-group mx-4 mb-0 col-md-6">
-                        <div class="row">
-                            <div class="col-4">
-                                <input type="checkbox" name="supinasi" id="supinasi">
-                                <label class="fw-2 mx-2" for="supinasi">Supinasi</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="checkbox" name="pronasi" id="pronasi">
-                                <label class="fw-2 mx-2" for="pronasi">Pronasi</label>
-                            </div>
+                    <div class="col-md-2 justify-content-end">
+                        <div class="form-group">
+                            <input type="checkbox" name="ID_pasien" id="ID_pasien">
                         </div>
-                    </div>
-                    <div class="form-group mx-4 mb-0 col-md-6">
-                        <div class="row">
-                            <div class="col-4">
-                                <input type="checkbox" name="lateral" id="lateral">
-                                <label class="fw-2 mx-2" for="lateral">Lateral kanan / kiri</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="checkbox" name="sim" id="sim">
-                                <label class="fw-2 mx-2" for="sim">Sim kanan / kiri</label>
-                            </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="gelang" id="gelang">
                         </div>
-                    </div>
-                    <div class="form-group mx-4 mb-0 col-md-6">
-                        <div class="row">
-                            <div class="col-4">
-                                <input type="checkbox" name="litotomi" id="litotomi">
-                                <label class="fw-2 mx-2" for="litotomi">Litotomi</label>
-                            </div>
-                            <div class="col-4">
-                                <input type="checkbox" name="other" id="other">
-                                <input class="col-8 mx-2 input-text" type="text" name="other1" id="other">
-                            </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="lokasi_OP" id="lokasi_OP">
                         </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="Prosedur_operasi" id="Prosedur_operasi">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="ico" id="ico">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="ID_pasien" id="ID_pasien">
+                        </div>
+
                     </div>
                 </div>
+
             </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-12">
-                <div class="input-group mid py-2">
-                    <label class="fw-2" for="estimasi">Estimasi Lama Operasi</label>
-                    <input type="text" name="estimasi" id="estimasi" class="input-text mx-2">
-                    <label class="fw-2" for="estimasi">Jam / Menit</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-12 mid">
-                <div class="form-group mt-2 text-center col-md-4">
-                    <label class="mid" for="ttd_dokter_opt">Dokter Operator</label>
-                    <input type="text" name="ttd_dokter_opt" id="ttd_dokter_opt" class="mt-5 input-text">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-12 text-center">
-                <h6 class="fw-2 py-2 my-0">Berikan Tanda pada gambar sesuai dengan penanda lokasi operasi pada tubuh
-                    pasien</h6>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-9">
-                <p>Berikan penandaan pada lokasi tubuh pasien dengan tanda lingkaran (O) <br><br> JANGAN menggunakan
-                    tanda silang (X)</p>
-            </div>
-            <div class="col col-md-3 col-sm-3">
-                <p>Deskripsi Singkat apabila tidak dapat dilakukan penanndaan pada tubuh pasien</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-md-6 col-sm-6"></div>
-            <div class="col col-md-3 col-sm-3"></div>
-            <div class="col col-md-3 col-sm-3">
-                <div class="form-group mt-3">
-                    <textarea class="" name="desk_lokasi" id="desk_lokasi" cols="40" rows="30"></textarea>
-                </div>
-            </div>
+            <div class="col col-md 4"></div>
+            <div class="col col-md 4"></div>
         </div>
     </div>
 
