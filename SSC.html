@@ -58,10 +58,10 @@
         border-bottom-width: 0;
     }
 
-    #iniPage .inner .col {
+    /* #iniPage .inner .col {
         padding-top: 5px;
         padding-bottom: 5px;
-    }
+    } */
 
     #iniPage .inner>.col:first-child {
         border-left-width: 0;
@@ -69,6 +69,7 @@
 
     #iniPage .inner>.col:last-child {
         border-right-width: 0;
+        border-bottom-width: 0;
     }
 
     #iniPage .form-group,
@@ -146,7 +147,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col col-md 4">
+            <div class="col col-md-4 pb-5">
                 <div class="form-group mt-1">
                     <input class="form-input" type="checkbox" name="konfirm" id="konfirm">
                     <label class="mx-3" for="konfirm">KONFIRMASI</label>
@@ -182,10 +183,460 @@
 
                     </div>
                 </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="tandaOP" id="tandaOP">
+                            <label class="mx-3" for="tandaOP">Lokasi operasi sudah diberi tanda</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="cekAnestesi" id="cekAnestesi">
+                            <label class="mx-3" for="cekAnestesi">Cek keamanan Anestesi</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <label class="mx-5" for="drAnstReady">Dokter Sp.Anestesi siap</label>
+                                <label class="mx-5" for="pasienPuasa">Pasien telah dipuasakan</label>
+                                <label class="mx-5" for="aksesIntravena">Akses Intravena berfungsi</label>
+                            </div>
+                            <div class="col-md-2 justify-content-end">
+                                <div class="form-group">
+                                    <input type="checkbox" name="drAnstReady" id="drAnstReady">
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="pasienPuasa" id="pasienPuasa">
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="aksesIntravena" id="aksesIntravena">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="mesinObtLengkap" id="mesinObtLengkap">
+                            <label class="mx-3" for="mesinObtLengkap">Mesin dan obat anestesi telah dicek dan
+                                lengkap</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="oximeterInstalled" id="oximeterInstalled">
+                            <label class="mx-3" for="oximeterInstalled">Pulse oximeter sudah terpasang dan
+                                berfungsi</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="rwytAlergi" id="rwytAlergi">
+                            <label class="mx-3" for="rwytAlergi">Riwayat Alergi yang diketahui</label>
+                            <div class="row">
+                                <div class="form-group mx-3 col-md-9">
+                                    <input class="form-input" type="checkbox" name="rwytAlergi_ya" id="rwytAlergi_ya">
+                                    <label for="rwytAlergi_ya">Ya</label>
+                                    <input class="input-text col-md-10" type="text" name="text_rwytAlergi_ya"
+                                        id="text_rwytAlergi_ya">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-input" type="checkbox" name="rwytAlergi_no" id="rwytAlergi_no">
+                                    <label for="rwytAlergi_no">Tidak</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="riskAspirasi" id="riskAspirasi">
+                            <label class="mx-3" for="riskAspirasi">Risiko kesulitan pada jalan napas atau risiko
+                                aspirasi</label>
 
+                            <div class="row">
+                                <div class="form-group mx-3 col-md-9">
+                                    <input class="form-input" type="checkbox" name="riskAspirasi_ya"
+                                        id="riskAspirasi_ya">
+                                    <label class="mx-1" for="riskAspirasi_ya">Ya, peralatan/bantuan sudah
+                                        tersedia</label>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-input" type="checkbox" name="riskAspirasi_no"
+                                        id="riskAspirasi_no">
+                                    <label class="mx-1" for="riskAspirasi_no">Tidak</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <input class="form-input" type="checkbox" name="riskDarah" id="riskDarah">
+                            <label class="mx-3" for="riskDarah">Risiko kehilangan darah > 500 ml(7 ml/Kg BB
+                                anak)</label>
+
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group mx-3 col-md-2">
+                                        <input class="form-input" type="checkbox" name="riskDarah_ya" id="riskDarah_ya">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label class="mx-1" for="riskDarah_ya">Ya, sudah ada akses intravena yang
+                                            adekuat
+                                            dan sudah ada rencana terapi cairan</label>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group mx-3 col-md-2">
+                                        <input class="form-input" type="checkbox" name="riskDarah_no" id="riskDarah_no">
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <label class="mx-1" for="riskDarah_no">Tidak</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <div class="form-group mt-2 text-center">
+                                    <label class="mid" for="ttd_dr_anst">Dokter Anestesi</label>
+                                    <input type="text" name="ttd_dr_anst" id="ttd_dr_anst"
+                                        class="col-8 mt-5 input-text">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group mt-2 text-center">
+                                    <label class="mid" for="ttd_asist_anst">Asisten Anestesi</label>
+                                    <input type="text" name="ttd_asist_anst" id="ttd_asist_anst"
+                                        class="col-8 mt-5 input-text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col col-md 4"></div>
-            <div class="col col-md 4"></div>
+            <div class="col col-md 4 pb-5">
+                <div class="form-group mt-1">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input class="form-input" type="checkbox" name="namaPeran" id="namaPeran">
+                        </div>
+                        <div class="col-md-11">
+                            <label class="" for="namaPeran">Seluruh anggota tim memperkenalkan nama dan perannya</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <input class="form-input" type="checkbox" name="konfirmOptBedah"
+                                        id="konfirmOptBedah">
+                                </div>
+                                <div class="col-md-11">
+                                    <label class="" for="konfirmOptBedah">Dokter Operator bedah melakukan konfirmasi
+                                        pasien, lokasi operasi, prosedur</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <div class="form-group mt-1">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <input class="form-input" type="checkbox" name="antiBioUsed" id="antiBioUsed">
+                                </div>
+                                <div class="col-md-11">
+                                    <label class="" for="antiBioUsed">Antibiotik profilaksis telah diberikan 60 menit
+                                        sebelum operasi</label>
+                                    <div class="form-group">
+                                        <label for="nmAntiBioUsed">a. Nama antibiotik : </label>
+                                        <input type="text" name="nmAntiBioUsed" id="nmAntiBioUsed" class="input-text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dosisAntiBioUsed">b. Dosis antibiotik : </label>
+                                        <input type="text" name="dosisAntiBioUsed" id="dosisAntiBioUsed"
+                                            class="input-text col-3">
+                                        <label for="jamAntiBioUsed">jam</label>
+                                        <input type="text" name="jamAntiBioUsed" id="jamAntiBioUsed"
+                                            class="input-text col-3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col">
+                        <h6 class="text-center py-0 my-0"><strong>ANTISIPASI KEJADIAN KRITIS</strong></h6>
+                    </div>
+                </div>
+
+                <div class="row inner">
+                    <div class="col">
+                        <h6 class="text-start py-0 my-0"><strong>Review Dokter Bedah</strong></h6>
+                        <div class="form-group mt-1">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <input class="form-input" type="checkbox" name="kondKritis" id="kondKritis">
+                                </div>
+                                <div class="col-md-11">
+                                    <label class="" for="kondKritis">Adakah kondisi kritis atau langkah tak
+                                        diduga?</label>
+                                    <div class="form-group">
+                                        <label for="kondKritis_ya">Bila YA :</label>
+                                        <input type="text" name="kondKritis_ya" id="kondKritis_ya"
+                                            class="input-text col-9 mx-2">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="estLamaOprasi">Perkiraan lama operasi : </label>
+                                        <input type="text" name="estLamaOprasi" id="estLamaOprasi"
+                                            class="input-text col-6">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="antisipasiDarah">Antisipasi kehilangan darah : </label>
+                                        <input type="text" name="antisipasiDarah" id="antisipasiDarah"
+                                            class="input-text col-5">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner mt-2">
+                    <div class="col">
+                        <h6 class="text-start py-0 my-0"><strong>Review Tim Anestesi</strong></h6>
+                        <div class="form-group mt-1 mb-2">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <input class="form-input" type="checkbox" name="anKhusus" id="anKhusus">
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="form-group">
+                                        <label for="anKhusus_ya">Hal khusus yang perlu diperhatikan </label>
+                                        <input type="text" name="anKhusus_ya" id="anKhusus_ya"
+                                            class="input-text col-12">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="antisipasiLangkah">Langkah apa yang dilakukan bila ada kondisi
+                                            kritis atau kejadian tidak diharapkan?</label>
+                                        <input type="text" name="antisipasiLangkah" id="antisipasiLangkah"
+                                            class="input-text col-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row inner mt-2">
+                    <div class="col">
+                        <h6 class="text-start py-0 my-0"><strong>Tim Keperawatan</strong></h6>
+                        <div class="form-group mt-1 mb-2">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <input class="form-input" type="checkbox" name="pastiSteril" id="pastiSteril">
+                                    </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="form-group">
+                                        <label for="pastiSteril">Sudahkah sterilitas dipastikan (termasuk hasil
+                                            indikator)?</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <input type="checkbox" name="alatKhusus" id="alatKhusus"
+                                            class="input-text col-12">
+                                    </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="form-group">
+                                        <label for="alatKhusus">Alat yang perlu diperhatikan khusus?</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="alatKhusus">Bila ada : </label>
+                                        <input type="text" name="ttd_dr_anst" id="ttd_dr_anst"
+                                            class="input-text col-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3 justify-content-center">
+                            <div class="form-group mt-2 text-center">
+                                <label class="mid" for="ttd_prwt_sirkuler">Perawat Sirkuler</label>
+                                <input type="text" name="ttd_prwt_sirkuler" id="ttd_prwt_sirkuler"
+                                    class="col-8 mt-5 input-text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md 4 pb-5">
+                <h6>Perawat melakukan konfirmasi verbal dengan tim :</h6>
+                <div class="form-group col-12">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" name="nmProsedur" id="nmProsedur">
+                        </div>
+                        <div class="col-md-11">
+                            <label for="nmProsedur">Nama prosedur :</label>
+                            <input type="text" name="text_nmProsedur" id="nmProsedur" class="input-text">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group col-12">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" name="alatOprasiCek" id="alatOprasiCek">
+                        </div>
+                        <div class="col-md-11">
+                            <label for="alatOprasiCek">Peralatan,kassa,dan jarum telah dihitung dengan benar</label>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nama Barang</th>
+                                <th>Jumlah Sebelum</th>
+                                <th>Jumlah Intra</th>
+                                <th>Jumlah Tambahan</th>
+                                <th>Jumlah Pasca</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">Instrumen</td>
+                                <td><input class="input-text col-12" type="text" name="insJmlhBefore"
+                                        id="insJmlhBefore"></td>
+                                <td><input class="input-text col-12" type="text" name="insJmlhIntra" id="insJmlhIntra">
+                                </td>
+                                <td><input class="input-text col-12" type="text" name="insJmlhTambahan"
+                                        id="insJmlhTambahan"></td>
+                                <td><input class="input-text col-12" type="text" name="insJmlhPasca" id="insJmlhPasca">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Jarum</td>
+                                <td><input class="input-text col-12" type="text" name="jarumJmlhBefore"
+                                        id="jarumJmlhBefore"></td>
+                                <td><input class="input-text col-12" type="text" name="jarumJmlhIntra"
+                                        id="jarumJmlhIntra">
+                                </td>
+                                <td><input class="input-text col-12" type="text" name="jarumJmlhTambahan"
+                                        id="jarumJmlhTambahan"></td>
+                                <td><input class="input-text col-12" type="text" name="jarumJmlhPasca"
+                                        id="jarumJmlhPasca">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Kassa</td>
+                                <td><input class="input-text col-12" type="text" name="kassaJmlhBefore"
+                                        id="kassaJmlhBefore"></td>
+                                <td><input class="input-text col-12" type="text" name="kassaJmlhIntra"
+                                        id="kassaJmlhIntra">
+                                </td>
+                                <td><input class="input-text col-12" type="text" name="kassaJmlhTambahan"
+                                        id="kassaJmlhTambahan"></td>
+                                <td><input class="input-text col-12" type="text" name="kassaJmlhPasca"
+                                        id="kassaJmlhPasca">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group col-12">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" name="labelSpesimen" id="labelSpesimen">
+                        </div>
+                        <div class="col-md-11">
+                            <label for="labelSpesimen">Label spesimen (miniman terdapat asal jaringan, nama pasien,
+                                tanggal lahir, dan nomor RM)</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" name="mslhAlatOP" id="mslhAlatOP">
+                        </div>
+                        <div class="col-md-11">
+                            <label for="mslhAlatOP">Adakah masalah dengan peralatan selama operasi?</label>
+                            <input type="text" name="text_mslhAlatOP" id="mslhAlatOP" class="input-text col-12">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-1">
+                            <input type="checkbox" name="msgPemulihanPasien" id="msgPemulihanPasien">
+                        </div>
+                        <div class="col-md-11">
+                            <label for="msgPemulihanPasien">Adakah pesan khusus untuk pemulihan pasien dari Dokter
+                                Bedah,Dokter Anestesi,dan Tim Keperawatan?</label>
+                            <textarea name="text_msgPemulihanPasien" id="msgPemulihanPasien"
+                                class="input-text col-12"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-end mt-5">
+                    <div class="col-md-4">
+                        <div class="row mt-3 justify-content-center">
+                            <div class="form-group mt-2 text-center">
+                                <label class="mid" for="ttd_prwt_sirkuler">Perawat Sirkuler</label>
+                                <input type="text" name="ttd_prwt_sirkuler" id="ttd_prwt_sirkuler"
+                                    class="col-8 mt-5 input-text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row mt-3 justify-content-center">
+                            <div class="form-group mt-2 text-center">
+                                <label class="mid" for="ttd_prwt_sirkuler">Perawat Sirkuler</label>
+                                <input type="text" name="ttd_prwt_sirkuler" id="ttd_prwt_sirkuler"
+                                    class="col-8 mt-5 input-text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row mt-3 justify-content-center">
+                            <div class="form-group mt-2 text-center">
+                                <label class="mid" for="ttd_prwt_sirkuler">Perawat Sirkuler</label>
+                                <input type="text" name="ttd_prwt_sirkuler" id="ttd_prwt_sirkuler"
+                                    class="col-8 mt-5 input-text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
