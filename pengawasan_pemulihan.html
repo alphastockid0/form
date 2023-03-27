@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    .input-text {
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+        border-top-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+        border-bottom-width: 0;
+    }
+
+    #iniPage .form-group,
+    label,
+    .input-group {
+        margin: 0;
+    }
+
+    #iniPage .cell {
+        margin: 0;
+        padding-left: 10px;
+        display: flex;
+        border: 1px solid #000000;
+        border-left-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .row:first-child .cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .cell:last-child {
+        border-right-width: 0;
+    }
+
+    #iniPage .row>.col:first-child>.cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .row>.col>.row:last-child>.cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin: 0;
+    }
+
+    #iniPage textarea.input-text {
+        width: fit-content;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="d-flex justify-content-end">
+            <h5 class="">RM.13.h.REV.01</h5>
+        </div>
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
+            </div>
+            <div class="col col-md-6 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">PENGAWASAN PASIEN DI RUANG PEMULIHAN</h3>
+            </div>
+            <div class="col col-md-4">
+                <div class="row inner">
+                    <div class="col col-md-3">No. RM</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="norm" id="norm">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Nama</div>
+                    <div class="col col-md-9">
+                        <input class="input-text col-12" type="text" name="nama" id="nama">
+                    </div>
+                </div>
+                <div class="row inner">
+                    <div class="col col-md-3">Tgl. Lahir</div>
+                    <div class="col col-md-9 inline-block mid px-1">
+                        <input type="date" name="tglLahir" id="tglLahir" class="col-6 px-1 my-0 input-text">
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="pria" id="pria">
+                            <label class="form-label mx-1" for="pria">L</label>
+                        </div>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="wanita" id="wanita">
+                            <label class="form-label mx-1" for="wanita">P</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="justify-content-center">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+                <div class="sticky-bottom">
+                    assdsdsd
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="form-group">
+                    <label for="masuk">Masuk jam : </label>
+                    <input type="text" name="masuk" id="masuk" class="input-text">
+                </div>
+                <div class="form-group">
+                    <label for="keluar">Keluar jam : </label>
+                    <input type="text" name="keluar" id="keluar" class="input-text">
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label" for="catatanTambahan">Catatan Tambahan : </label>
+                    <textarea type="text" name="catatanTambahan" id="catatanTambahan" rows="20"
+                        class="col-12"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        getChartData('<?php echo $id_pasien; ?>');
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart;
+
+        function openModalGet(ini, id, type) {
+            var urlpostz = '';
+            $('#optionMadalMonitoring').find('.modal-dialog').css('max-width', '90%');
+            $('#optionMadalMonitoring').find('.modal-body').css('padding', '14px');
+            $('#optionMadalMonitoring').css('top', '0%');
+            $('#optionMadalMonitoring').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            var postForm = {
+                'id': id,
+                'type': type
+            };
+            $.ajax({
+                url: urlpostz,
+                type: "POST",
+                data: postForm,
+                beforeSend: function () {
+                    $('#optionMadalMonitoring').find('.modal-body').html('<div style="height:100px;padding-top:50px"><div class="cssload-loader">Loading...</div></div>');
+                },
+                success: function (res) {
+                    $('#optionMadalMonitoring').find('.modal-body').html(res);
+                },
+                error: function (jXHR, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+            return false;
+        }
+
+        function setChartData(waktu, data) {
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: waktu,
+                    datasets: data
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'GRAFIK HEMODINAMIK'
+                        }
+                    },
+                    animations: {
+                        tension: {
+                            duration: 1000,
+                            easing: 'linear',
+                            from: 1,
+                            to: 0,
+                            loop: true
+                        }
+                    },
+
+                }
+            });
+        }
+
+        function pushData(data) {
+            var label = data.hari + '/' + data.bulan + ' ' + data.jam + ':' + data.menit;
+            chart.data.labels.push(label);
+
+            chart.data.datasets[0].data.push(data.sub_monitor.nadi);
+            chart.data.datasets[1].data.push(data.sub_monitor.sistole);
+            chart.data.datasets[2].data.push(data.sub_monitor.diastole);
+            chart.data.datasets[3].data.push(data.sub_monitor.suhu);
+
+            chart.update();
+        }
+
+        function deleteData() {
+            const lastIndex = chart.data.labels.length - 1;
+            const lastLabel = chart.data.labels[lastIndex];
+            const lastData = chart.data.datasets.map(dataset => dataset.data[lastIndex]);
+            console.log(lastData);
+
+            let isUndefined = false;
+            for (let i = 0; i < lastData.length; i++) {
+                if (typeof lastData[i] === 'undefined') {
+                    isUndefined = true;
+                    break;
+                }
+            }
+            if (!isUndefined) {
+                Swal.fire({
+                    title: `Anda yakin ingin menghapus data ${lastLabel}?`,
+                    html: `Data yang akan dihapus adalah:<br>
+                        Nadi: ${lastData[0]}<br>
+                        Sistole: ${lastData[1]}<br>
+                        Diastole: ${lastData[2]}<br>
+                        Suhu: ${lastData[3]}`,
+                    // text: "Data yang sudah dihapus tidak dapat dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, hapus data!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '<?php echo base_url(); ?>/hapus-monitoring-<?php echo $id_pasien; ?>.delete',
+                            type: "POST",
+                            data: {
+                                jenis_monitor: "Hemodinamik",
+                                label: lastLabel,
+                                nilai: {
+                                    Nadi: `${lastData[0]}`,
+                                    Sistole: `${lastData[1]}`,
+                                    Diastole: `${lastData[2]}`,
+                                    Suhu: `${lastData[3]}`
+                                },
+                            },
+                            beforeSend: function () { },
+                            success: function (data) {
+                                // kode untuk menghapus data
+                                Swal.fire(
+                                    'Data berhasil dihapus!',
+                                    '',
+                                    'success'
+                                )
+                                // Menghapus data terakhir dari chart
+                                chart.data.labels.pop();
+                                chart.data.datasets.forEach((dataset) => {
+                                    dataset.data.pop();
+                                });
+
+                                // Mengupdate chart
+                                chart.update();
+
+                            },
+                            error: function (jXHR, textStatus, errorThrown) {
+                                Swal.fire("Gagal!", errorThrown, "error");
+                            }
+                        });
+
+                    }
+                });
+            } else {
+                Swal.fire("Gagal!", "Belum Ada Data!", "error");
+            }
+
+
+
+        }
+
+        function getChartData(id_pasien) {
+            $.ajax({
+                url: '<?php echo base_url(); ?>/load-chart-' + id_pasien + '.json',
+                type: 'GET',
+                async: true,
+                dataType: "json",
+                success: function (data) {
+                    // console.log(data);
+                    setChartData(data.waktu, data.data);
+                }
+            });
+        }
+    </script>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

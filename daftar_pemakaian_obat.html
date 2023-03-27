@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    .input-text {
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    /* #iniPage .inner .col {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    } */
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+        border-top-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+        border-bottom-width: 0;
+    }
+
+    #iniPage .form-group,
+    label,
+    .input-group {
+        margin: 0;
+    }
+
+    #iniPage .cell {
+        margin: 0;
+        padding-left: 10px;
+        display: flex;
+        border: 1px solid #000000;
+        border-left-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .row:first-child .cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .cell:last-child {
+        border-right-width: 0;
+    }
+
+    #iniPage .row>.col:first-child>.cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .row>.col>.row:last-child>.cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="d-flex justify-content-end">
+            <h5 class="">RM.13.g.REV.01</h5>
+        </div>
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
+            </div>
+            <div class="col col-md-10 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">DAFTAR PEMAKAIAN OBAT & BMHP PASIEN OPERASI</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-7">
+                <div class="row inner">
+                    <label for="nmPasien">Nama Pasien&emsp;&emsp;&emsp;:&emsp;</label>
+                    <input type="text" name="nmPasien" id="nmPasien" class="col-md-8 input-text">
+                </div>
+            </div>
+            <div class="col col-md-5">
+                <div class="row inner">
+                    <label for="tgl">Tanggal&emsp;&emsp;&emsp;:&emsp;</label>
+                    <input type="date" name="tgl" id="tgl" class="col-md-8 input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-7">
+                <div class="row inner">
+                    <label for="norm">No.RM&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;</label>
+                    <input type="text" name="norm" id="norm" class="col-md-8 input-text">
+                </div>
+            </div>
+            <div class="col col-md-5">
+                <div class="row inner">
+                    <label for="drSpAn">Dokter SpAnl&nbsp;&nbsp;&nbsp;:&emsp;</label>
+                    <input type="text" name="drSpAn" id="drSpAn" class="col-md-8 input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-7">
+                <div class="row inner">
+                    <label for="tindakan">Tindakan&emsp;&emsp;&emsp;&emsp;&emsp;:&emsp;</label>
+                    <input type="text" name="tindakan" id="tindakan" class="col-md-8 input-text">
+                </div>
+            </div>
+            <div class="col col-md-5">
+                <div class="row inner">
+                    <label for="asisten">Asisten&ensp;&emsp;&emsp;&emsp;:&emsp;</label>
+                    <input type="text" name="asisten" id="asisten" class="col-md-8 input-text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 justify-content-center align-items-center">
+                        <h5 class="py-0 my-0 text-center">NO</h5>
+                    </div>
+                    <div class="cell col-md-6 justify-content-center align-items-center">
+                        <h5 class="py-0 my-0 text-center">JENIS OBAT/ALKES</h5>
+                    </div>
+                    <div class="cell col-md-5 justify-content-center align-items-center">
+                        <h5 class="py-0 my-0 text-center">JUMLAH (CC,ampul,vial,piece)</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 justify-content-center align-items-center">
+                        <h5 class="py-0 my-0 text-center">NO</h5>
+                    </div>
+                    <div class="cell col-md-6 justify-content-center align-items-center">
+                        <h5 class="py-0 my-0 text-center">JENIS OBAT/ALKES</h5>
+                    </div>
+                    <div class="cell col-md-5 justify-content-center align-items-center">
+                        <h5 class="py-0 my-0 text-center">JUMLAH (CC,ampul,vial,piece)</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-6 d-flex">
+                <div class="cell col-md-12 align-items-center justify-content-center">
+                    <h5 class="">ANALGESIK</h5>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="bisturi" class="py-0 my-0 text-start">Bisturi no</label>
+                        <input type="text" name="bisturiNo" id="bisturi" class="input-text">
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="bisturiJmlh" id="bisturi" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="curaspon" class="py-0 my-0 text-start">curaspon (penyerap)</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="curasponJmlh" id="curaspon" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="orasic" class="py-0 my-0 text-start">Orasic</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="orasicJmlh" id="orasic" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="tramal100" class="py-0 my-0 text-start">Tramal 100</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="tramal100Jmlh" id="tramal100" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="remopain" class="py-0 my-0 text-start">Tramal 100</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="remopainJmlh" id="remopain" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="curapont" class="py-0 my-0 text-start">Curapont (Steril strip)</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="curapontJmlh" id="curapont" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">4</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="kasaDeep" class="py-0 my-0 text-start">Kasa Deep</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="kasaDeepJmlh" id="kasaDeep" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">5</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="kasagulung" class="py-0 my-0 text-start">Kasa Gulung</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="kasagulungJmlh" id="kasagulung" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">ANTI EMETIKA</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">6</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="transfusiSet" class="py-0 my-0 text-start">Transfusi Set</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="transfusiSetJmlh" id="transfusiSet" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">7</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="selangO2" class="py-0 my-0 text-start">Selang O2</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="selangO2Jmlh" id="selangO2" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="narfoz" class="py-0 my-0 text-start">Narfoz</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="narfozJmlh" id="narfoz" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="gavistal" class="py-0 my-0 text-start">Gavistal</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="gavistalJmlh" id="gavistal" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="granon" class="py-0 my-0 text-start">Granon</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="granonJmlh" id="granon" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">8</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="handscoen65" class="py-0 my-0 text-start">Handscoen steril 6,5</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="handscoen65Jmlh" id="handscoen65" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">9</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="handscoen7" class="py-0 my-0 text-start">Handscoen steril 7</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="handscoen7Jmlh" id="handscoen7" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">10</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="handscoen75" class="py-0 my-0 text-start">Handscoen steril 7,5</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="handscoen75Jmlh" id="handscoen75" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">GENERAL ANESTESI</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">11</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Opsite25x10" class="py-0 my-0 text-start">Opsite 25 x 10 cm</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="Opsite25x10Jmlh" id="Opsite25x10" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">12</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Spuit1cc" class="py-0 my-0 text-start">Spuit 1 cc</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="Spuit1ccJmlh" id="Spuit1cc" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="atracurium" class="py-0 my-0 text-start">Atracurium</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="atracuriumJmlh" id="atracurium" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="ethrane" class="py-0 my-0 text-start">Ethrane</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="ethraneJmlh" id="ethrane" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="tramus" class="py-0 my-0 text-start">Tramus</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="tramusJmlh" id="tramus" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">4</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="o2" class="py-0 my-0 text-start">O2</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="o2Jmlh" id="o2" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">5</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="n2o" class="py-0 my-0 text-start">N2O</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="n2oJmlh" id="n2o" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">13</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="spuit3cc" class="py-0 my-0 text-start">Spuit 3 cc</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="spuit3ccJmlh" id="spuit3cc" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">14</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="spuit5cc" class="py-0 my-0 text-start">Spuit 5 cc</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="spuit5ccJmlh" id="spuit5cc" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">15</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="spuit10cc" class="py-0 my-0 text-start">Spuit 10 cc</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="spuit10ccJmlh" id="spuit10cc" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">16</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="spuit20cc" class="py-0 my-0 text-start">Spuit 20 cc</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="spuit20ccJmlh" id="spuit20cc" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">17</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">ANESTESI</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">18</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="surflo18g" class="py-0 my-0 text-start">Surflo 18 G</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="surflo18gJmlh" id="surflo18g" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">19</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="surflo20g" class="py-0 my-0 text-start">Surflo 20 G</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="surflo20gJmlh" id="surflo20g" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="regivel" class="py-0 my-0 text-start">Regivel</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="regivelJmlh" id="regivel" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Levica" class="py-0 my-0 text-start">Levica</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="LevicaJmlh" id="Levica" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Sedacum" class="py-0 my-0 text-start">Sedacum</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="SedacumJmlh" id="Sedacum" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">4</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="ktm100mg" class="py-0 my-0 text-start">KTM 100 mg</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="ktm100mgJmlh" id="ktm100mg" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">5</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="lidodex" class="py-0 my-0 text-start">Lidodex</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="lidodexJmlh" id="lidodex" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">6</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Pehacain" class="py-0 my-0 text-start">Pehacain</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="PehacainJmlh" id="Pehacain" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">20</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="surflo22g" class="py-0 my-0 text-start">Surflo 22 G</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="surflo22gJmlh" id="surflo22g" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">21</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="benang" class="py-0 my-0 text-start">Benang</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="benangJmlh" id="benang" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spuit10cc" class="py-0 my-0 text-start">Spuit 10 cc</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spuit10ccJmlh" id="spuit10cc" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spuit20cc" class="py-0 my-0 text-start">Spuit 20 cc</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spuit20ccJmlh" id="spuit20cc" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">ANTI HIPERTENSI</h5>
+            </div>
+            <div class="col col-md-6">
+
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Catapres" class="py-0 my-0 text-start">Catapres</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="CatapresJmlh" id="Catapres" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Lasix" class="py-0 my-0 text-start">Lasix</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="LasixJmlh" id="Lasix" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&nbsp;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="spinocant27g" class="py-0 my-0 text-start">Spinocant 27 G</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="spinocant27gJmlh" id="spinocant27g" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid py-3">
+                <h5 class="">HEMOSTATIK</h5>
+            </div>
+            <div class="col col-md-6 d-flex mid py-3">
+                <h5 class="">CAIRAN</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="tranexamicAcid" class="py-0 my-0 text-start">Tranexamic Acid</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="tranexamicAcidJmlh" id="tranexamicAcid" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Aquabidest" class="py-0 my-0 text-start">Aquabidest</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="AquabidestJmlh" id="Aquabidest" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">HORMON</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Alkohol95" class="py-0 my-0 text-start">Alkohol 95%</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="Alkohol95Jmlh" id="Alkohol95" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Dextro5" class="py-0 my-0 text-start">Dextro 5%</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="Dextro5Jmlh" id="Dextro5" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Oksitosin" class="py-0 my-0 text-start">Oksitosin</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="OksitosinJmlh" id="Oksitosin" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Methylergometrin" class="py-0 my-0 text-start">Methylergometrin</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="MethylergometrinJmlh" id="Methylergometrin" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">4</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Nacl500" class="py-0 my-0 text-start">Nacl 500 ml</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="Nacl500Jmlh" id="Nacl500" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">5</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Nacl25cc" class="py-0 my-0 text-start">Nacl 25 cc</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="Nacl25ccJmlh" id="Nacl25cc" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">KORTIKOSTEROID</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">6</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="ringerLaktat" class="py-0 my-0 text-start">Ringer Laktat (RL)</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="ringerLaktatJmlh" id="ringerLaktat" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">7</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="SanbeHest" class="py-0 my-0 text-start">Sanbe Hest</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="SanbeHestJmlh" id="SanbeHest" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Dexametason" class="py-0 my-0 text-start">Dexametason</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="DexametasonJmlh" id="Dexametason" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="Nacl500" class="py-0 my-0 text-start">Nacl 500 ml</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="Nacl500Jmlh" id="Nacl500" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">ANAGESIK NARKOTIK</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="ringerLaktat" class="py-0 my-0 text-start">Ringer Laktat (RL)</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="ringerLaktatJmlh" id="ringerLaktat" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="SanbeHest" class="py-0 my-0 text-start">Sanbe Hest</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="SanbeHestJmlh" id="SanbeHest" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="MorfinHCI" class="py-0 my-0 text-start">Morfin HCI</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="MorfinHCIJmlh" id="MorfinHCI" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Petidin" class="py-0 my-0 text-start">Petidin</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="PetidinJmlh" id="Petidin" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="Nacl500" class="py-0 my-0 text-start">Nacl 500 ml</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="Nacl500Jmlh" id="Nacl500" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="Nacl500" class="py-0 my-0 text-start">Nacl 500 ml</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="Nacl500Jmlh" id="Nacl500" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid py-3">
+                <h5 class="">SEDATIF</h5>
+            </div>
+            <div class="col col-md-6 d-flex mid py-3">
+                <h5 class="">ANTISEPTIK EKSTERN</h5>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="valiumDiazepam" class="py-0 my-0 text-start">Valium (Diazepam)</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="valiumDiazepamJmlh" id="valiumDiazepam" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Minoscrub" class="py-0 my-0 text-start">Minoscrub</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="MinoscrubJmlh" id="Minoscrub" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">ANTISPASMOSDIK</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="povidon" class="py-0 my-0 text-start">Povidon lolida</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="povidonJmlh" id="povidon" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">3</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="bionect" class="py-0 my-0 text-start">Bionect Cream</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="bionectJmlh" id="bionect" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="Atropinsulfas" class="py-0 my-0 text-start">Atropin sulfas</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="AtropinsulfasJmlh" id="Atropinsulfas" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">4</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="GoodHealth" class="py-0 my-0 text-start">Good Health</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="GoodHealthJmlh" id="GoodHealth" class="input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col col-md-6 d-flex mid">
+                <h5 class="">ANTI ASMA</h5>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="povidon" class="py-0 my-0 text-start">Povidon lolida</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="povidonJmlh" id="povidon" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="bionect" class="py-0 my-0 text-start">Bionect Cream</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="bionectJmlh" id="bionect" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">1</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="AminoPhilin" class="py-0 my-0 text-start">Aminophilin</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="AminoPhilinJmlh" id="AminoPhilin" class="input-text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">2</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <label for="ephedrinhci" class="py-0 my-0 text-start">Ephedrin HCI</label>
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <input type="text" name="ephedrinhciJmlh" id="ephedrinhci" class="input-text">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="Nacl500" class="py-0 my-0 text-start">Nacl 500 ml</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="Nacl500Jmlh" id="Nacl500" class="input-text"> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-1 align-items-center justify-content-center">
+                        <p class="py-0 my-0 text-center">&NonBreakingSpace;</p>
+                    </div>
+                    <div class="cell col-md-6 align-items-center justify-content-start">
+                        <!-- <label for="Nacl500" class="py-0 my-0 text-start">Nacl 500 ml</label> -->
+                    </div>
+                    <div class="cell col-md-5 align-items-center justify-content-center">
+                        <!-- <input type="text" name="Nacl500Jmlh" id="Nacl500" class="input-text"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="row mt-3 justify-content-end">
+                    <div class="form-group mt-2 text-center mx-4 mb-5">
+                        <label class="mid" for="ttd_dokter_SpAnestesi">Dokter Spesialis Anestesi</label>
+                        <input type="text" name="ttd_dokter_SpAnestesi" id="ttd_dokter_SpAnestesi"
+                            class="col-8 mt-5 input-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
