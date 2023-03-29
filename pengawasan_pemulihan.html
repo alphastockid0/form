@@ -80,6 +80,7 @@
         display: flex;
         border: 1px solid #000000;
         border-left-width: 0;
+        height: 100%;
     }
 
     #iniPage .row:not(:last-child) .cell {
@@ -110,10 +111,57 @@
     h6 {
         font-weight: bold;
         margin: 0;
+        color: black;
     }
 
     #iniPage textarea.input-text {
         width: fit-content;
+    }
+
+    #iniPage .stay-bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #iniPage .col {
+        position: relative;
+    }
+
+    #iniPage select {
+        text-align: center;
+    }
+
+    #iniPage .form-select {
+        width: 100%;
+    }
+
+    #myChart canvas {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        margin-bottom: 250px;
+    }
+
+    @keyframes atend {
+        75% {
+            background-color: #f06262;
+            color: white
+        }
+
+    }
+
+    @-webkit-keyframes atend {
+        75% {
+            background-color: #f06262;
+            color: white
+        }
+    }
+
+    .atend {
+        -webkit-animation: atend 2s linear infinite;
+        -moz-animation: atend 2s linear infinite;
+        animation: atend 2s linear infinite;
     }
 </style>
 
@@ -160,12 +208,21 @@
         </div>
         <div class="row">
             <div class="col col-md-8">
-                <div class="justify-content-center">
-                    <canvas id="myChart"></canvas>
+                <div class="form-group mb-5">
+                    <div class="justify-content-center">
+                        <canvas id="myChart"></canvas>
+                    </div>
                 </div>
 
-                <div class="sticky-bottom">
-                    assdsdsd
+                <div class="row">
+                    <div class="cell col-md-12">
+                        <div class="form-group col-12">
+                            <label class="form-label" for="obatRecovery">Obat yang diberikan selama Recovery Room :
+                            </label>
+                            <textarea type="text" name="obatRecovery" id="obatRecovery" rows="5"
+                                class="col-12"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col col-md-4">
@@ -184,8 +241,378 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row">
+                    <div id="kategori" aria-selected="false" class="cell atend col-md-6 mid">
+                        <h5 class="text-center">
+                            <label for="aldrette-score">ALDRETTE SCORE (DEWASA)</label>
+                        </h5>
+                        <input type="hidden" id="aldrette-score" name="aldrette" value="1">
+                    </div>
+                    <div id="kategori" aria-selected="false" class="cell atend col-md-6 mid">
+                        <h5 class="text-center">
+                            <label for="steward-score">STEWARD SCORE (DEWASA)</label>
+                        </h5>
+                        <input type="hidden" id="steward-score" name="steward" value="1">
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <h6 class="text-center py-0 my-0">Masuk</h6>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <h6 class="text-center py-0 my-0">Keluar</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="form-group mid">
+                    <label for="kesadaran">Kesadaran</label>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="kesadaranMasuk" id="kesadaranMasuk" class="form-select col-12 ">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Sadar penuh mudah dipanggil</option>
+                                <option value="1">Bangun jika dipanggil</option>
+                                <option value="0">Tidak ada respon</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="kesadaranKeluar" id="kesadaranKeluar" class="form-select col-12 ">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Sadar penuh mudah dipanggil</option>
+                                <option value="1">Bangun jika dipanggil</option>
+                                <option value="0">Tidak ada respon</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="form-group mid">
+                    <label for="pernapasan">Pernapasan</label>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="pernapasanMasuk" id="pernapasanMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Napas dalam,batuk,dan tangis kuat</option>
+                                <option value="1">Napas dangkal dan adekuat</option>
+                                <option value="0">Napas apneu/napas tidak adekuat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="pernapasanKeluar" id="pernapasanKeluar" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Napas dalam,batuk,dan tangis kuat</option>
+                                <option value="1">Napas dangkal dan adekuat</option>
+                                <option value="0">Napas apneu/napas tidak adekuat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="form-group mid">
+                    <label for="aktifitasMotorik">Aktifitas Motorik</label>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="aktifitasMotorikMasuk" id="aktifitasMotorikMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Gerak 4 anggota tubuh</option>
+                                <option value="1">Gerak 2 anggota tubuh</option>
+                                <option value="0">Tidak ada gerak</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="aktifitasMotorikKeluar" id="aktifitasMotorikKeluar"
+                                class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Gerak 4 anggota tubuh</option>
+                                <option value="1">Gerak 2 anggota tubuh</option>
+                                <option value="0">Tidak ada gerak</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group mid">
+                            <label for="tekananDarah">Tekanan Darah</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid bg-dark">
+                        &NonBreakingSpace;
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="tekananDarahMasuk" id="tekananDarahMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Berbeda ± 20 mmHg dari pre operasi</option>
+                                <option value="1">Berbeda 20-50 mmHg dari pre operasi</option>
+                                <option value="0">Berbeda ± 50 mmHg dari pre operasi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="tekananDarahKeluar" id="tekananDarahKeluar" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Berbeda ± 20 mmHg dari pre operasi</option>
+                                <option value="1">Berbeda 20-50 mmHg dari pre operasi</option>
+                                <option value="0">Berbeda ± 50 mmHg dari pre operasi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group mid">
+                            <label for="warnaKulit">Warna Kulit</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid bg-dark">&NonBreakingSpace;</div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="warnaKulitMasuk" id="warnaKulitMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Merah/normal</option>
+                                <option value="1">Pucat</option>
+                                <option value="0">Sianosis</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="warnaKulitKeluar" id="warnaKulitKeluar" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Merah/normal</option>
+                                <option value="1">Pucat</option>
+                                <option value="0">Sianosis</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group mid">
+                            <label for="mualMuntah">Mual Muntah</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid bg-dark">&NonBreakingSpace;</div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="mualMuntahMasuk" id="mualMuntahMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Minimal (1-2 x muntah)</option>
+                                <option value="1">Sedang (3-5 x muntah)</option>
+                                <option value="0">Berat (muntah terus menerus, pengawasan khusus)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="mualMuntahKeluar" id="mualMuntahKeluar" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Minimal (1-2 x muntah)</option>
+                                <option value="1">Sedang (3-5 x muntah)</option>
+                                <option value="0">Berat (muntah terus menerus, pengawasan khusus)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group mid">
+                            <label for="perdarahan">Perdarahan</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid bg-dark">&NonBreakingSpace;</div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="perdarahanMasuk" id="perdarahanMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Minimal (tidak perlu ganti balut)</option>
+                                <option value="1">Sedang (perlu 1x ganti balut)</option>
+                                <option value="0">Berat (lebih dari 3x ganti balut)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="perdarahanKeluar" id="perdarahanKeluar" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="2">Minimal (tidak perlu ganti balut)</option>
+                                <option value="1">Sedang (perlu 1x ganti balut)</option>
+                                <option value="0">Berat (lebih dari 3x ganti balut)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="form-group d-flex justify-content-end">
+                    <label for="jumlah">Jumlah</label>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <h6 id="totalMasuk" class="text-center">0</h6>
+                        </div>
+                    </div>
+                    <div class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <h6 id="totalKeluar" class="text-center">0</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8 align-items-end">
+                <div class="row">
+                    <div class="cell col-12">
+                        <div class="form-group col-12">
+                            <label for="BromageScore"><strong>Bromage Score</strong>&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-12">
+                        <div class="form-group col-12">
+                            <label for="ketLain"><strong>Keterangan lain</strong>&nbsp;&nbsp;:&nbsp;</label>
+                            <input type="text" name="ketLain" id="ketLain" class="input-text mx-2 col-12">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row h-100">
+                    <div id="bromageIn" class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="bromageMasuk" id="bromageMasuk" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="0">Dapat menggerakkan kaki dengan bebas</option>
+                                <option value="1">Dapat menekuk lutut, menggerakkan kaki, tapi belum bisa mengangkat
+                                    kaki</option>
+                                <option value="2">Dapat menggerakkan kaki</option>
+                                <option value="3">Tidak dapat menggerakkan kaki sama sekali</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="bromageOut" class="cell col-md-6 mid">
+                        <div class="form-group col-12">
+                            <select name="bromageKeluar" id="bromageKeluar" class="form-select col-12">
+                                <option value="" selected disabled hidden>Pilih Kriteria</option>
+                                <option value="0">Dapat menggerakkan kaki dengan bebas</option>
+                                <option value="1">Dapat menekuk lutut, menggerakkan kaki, tapi belum bisa mengangkat
+                                    kaki</option>
+                                <option value="2">Dapat menggerakkan kaki</option>
+                                <option value="3">Tidak dapat menggerakkan kaki sama sekali</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
+        $(document).ready(function () {
+            $('#kategori').click(function () {
+                $(this).removeClass('atend');
+                $(this).attr('aria-selected', 'true');
+            });
+        });
+        const charta = document.getElementById('myChart');
+
+        new Chart(charta, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+
         getChartData('<?php echo $id_pasien; ?>');
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart;
