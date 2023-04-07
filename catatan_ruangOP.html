@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        font-size: 10px;
+    }
+
+    .input-text {
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+        border-top-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+        border-bottom-width: 0;
+    }
+
+    #iniPage .form-group,
+    label,
+    .input-group {
+        margin: 0;
+    }
+
+    #iniPage .cell {
+        margin: 0;
+        padding-left: 10px;
+        border: 1px solid #000000;
+        border-left-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .row:first-child .cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .cell:last-child {
+        border-right-width: 0;
+    }
+
+    #iniPage .row>.col:first-child>.cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .row>.col>.row:last-child>.cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    @media print {
+        .hilang {
+            visibility: hidden;
+        }
+    }
+
+    h5 {
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="d-flex justify-content-end">
+            <h5 class="">RM.13.e.REV.01</h5>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h5 class="text-center py-2">CATATAN UNTUK DI RUANGAN (BERLAKU 24 JAM POST OPERASI)</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="form-group mb-2">
+                    <label for="pengawasan">Pengawasan : TD/Nadi/RR/Suhu tiap 1/2 jam selama </label>
+                    <input type="text" name="pengawasan" id="pengawasan" class="input-text">
+                    <label for="pengawasan">jam</label>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="kegawatan">Bila terjadi kegawatan menghubungi : </label>
+                    <input type="text" name="kegawatan" id="kegawatan" class="input-text">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="pCairan">Program Cairan : </label>
+                    <textarea class="col-12" name="pCairan" id="pCairan" rows="5"></textarea>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="pAnalgetik">Program Analgetik : </label>
+                    <textarea class="col-12" name="pAnalgetik" id="pAnalgetik" rows="5"></textarea>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <label for="mual">Jika terjadi mual diberi : </label>
+                        <textarea class="col-12" name="mual" id="mual" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <label for="menggigil">Jika terjadi menggigil diberi : </label>
+                        <textarea class="col-12" name="menggigil" id="menggigil" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <div class="inline-block">
+                            <label for="tensi">Jika tensi &#60;</label>
+                            <input type="text" name="tensiv" id="tensi" class="input-text col-3 mb-1">
+                            <label for="tensi">mmHg</label>
+                        </div>
+                        <span>lakukan :</span>
+                        <textarea class="col-12" name="tensi" id="tensi" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <label for="analProg">Program Analgetik</label>
+                        <textarea class="col-12" name="analProg" id="analProg" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-4">
+                <div class="form-group mb-2">
+                    <label for="tgl">Tanggal : </label>
+                    <input type="date" name="tgl" id="tgl" class="input-text">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="jam">jam : </label>
+                    <input type="time" name="jam" id="jam" class="input-text">
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="form-group mt-2 text-center">
+                        <label class="mid" for="ttd_drAn">Tanda Tangan dan Nama Terang<br>Dokter Anestesi</label>
+                        <div class="inline-block">
+                            <span>(</span>
+                            <input type="text" name="ttd_drAn " id="ttd_drAn" class="col-8 mt-5 input-text">
+                            <span>)</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="form-group mt-2 text-center">
+                        <label class="mid" for="ttd_assdrAn">Tanda Tangan dan Nama Terang<br>Asisten Anestesi</label>
+                        <div class="inline-block">
+                            <span>(</span>
+                            <input type="text" name="ttd_assdrAn" id="ttd_assdrAn" class="col-8 mt-5 input-text">
+                            <span>)</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        const inputTanggal = document.querySelector("#waktu");
+        let date = new Date(inputTanggal.value);
+        let formattedDate = "";
+
+        // Definisikan options di luar event listener
+        const options = {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        };
+
+        inputTanggal.addEventListener("change", function () {
+            date = new Date(inputTanggal.value);
+            formattedDate = date.toLocaleDateString("id-ID", options);
+            console.log(formattedDate);
+        });
+
+        inputTanggal.addEventListener("focus", function () {
+            inputTanggal.type = "date";
+            inputTanggal.value = date.toISOString().slice(0, 10); // Ubah slice menjadi 10
+        });
+
+        inputTanggal.addEventListener("blur", function () {
+            inputTanggal.type = "text";
+            const d = new Date(inputTanggal.value);
+            formattedDate = d.toLocaleDateString("id-ID", options);
+            inputTanggal.value = formattedDate;
+        });
+
+
+    </script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMHP</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        width: 210mm;
+        /* lebar kertas A4 */
+        height: 297mm;
+        /* tinggi kertas A4 */
+        margin: 0 auto;
+        /* membuat halaman HTML terletak di tengah layar */
+        font-size: 11px;
+    }
+
+    #iniPage {
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    img {
+        width: 90px;
+        padding: 10px;
+    }
+
+    .input-text {
+        margin-bottom: 2px;
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+    label{
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <table>
+            <thead>
+                <tr style="width: 100%;">
+                    <th style="width:9mm"></th>
+                    <th style="width:24mm"></th>
+                    <th style="width:24mm"></th>
+                    <th style="width:24mm"></th>
+                    <th style="width:24mm"></th>
+
+                    <th style="width:9mm"></th>
+                    <th style="width:24mm"></th>
+                    <th style="width:24mm"></th>
+                    <th style="width:24mm"></th>
+                    <th style="width:24mm"></th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <center><img src="HTML/images/logo-hitam.png" alt="LOGO"></center>
+                    </td>
+                    <td colspan="9">
+                        <center>
+                            <h4>DAFTAR PEMAKAIAN OBAT & BMHP PASIEN OPERASI</h4>
+                        </center>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: start;padding-left: 5px;padding-right: 5px;" colspan="5">
+                        <label for="nmPasien">Nama Pasien&emsp;&emsp;&emsp;:&emsp;</label>
+                        <input type="text" name="nmPasien" id="nmPasien" class="col-md-8 input-text">
+                    </td>
+                    <td style="text-align: start;padding-left: 5px;padding-right: 5px;" colspan="5">
+                        <label for="tgl">Tanggal&emsp;&emsp;&emsp;:&emsp;</label>
+                        <input type="date" name="tgl" id="tgl" class="col-md-8 input-text"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: start;padding-left: 5px;padding-right: 5px;" colspan="5">No.RM
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
+                    </td>
+                    <td style="text-align: start;padding-left: 5px;padding-right: 5px;" colspan="5">Dokter
+                        SpAn&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="text-align: start;padding-left: 5px;padding-right: 5px;" colspan="5">
+                        Tindakan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</td>
+                    <td style="text-align: start;padding-left: 5px;padding-right: 5px;" colspan="5">
+                        Asisten&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <th>No</th>
+                    <th colspan="2">JENIS OBAT</th>
+                    <th colspan="2">JUMLAH (CC,ampul,vial,piece)</th>
+                    <th>No</th>
+                    <th colspan="2">JENIS OBAT</th>
+                    <th colspan="2">JUMLAH (CC,ampul,vial,piece)</th>
+                </tr>
+                <tr>
+                    <th colspan="5" rowspan="2">ANALGESIK</th>
+                    <td>1</td>
+                    <td colspan="2">a</td>
+                    <td colspan="2">b</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td colspan="2">a</td>
+                    <td colspan="2">b</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

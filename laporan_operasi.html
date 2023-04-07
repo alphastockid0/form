@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        font-size: 10px;
+    }
+
+    .input-text {
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+        border-top-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+        border-bottom-width: 0;
+    }
+
+    #iniPage .form-group,
+    label,
+    .input-group {
+        margin: 0;
+    }
+
+    #iniPage .cell {
+        margin: 0;
+        padding-left: 10px;
+        border: 1px solid #000000;
+        border-left-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .row:first-child .cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .cell:last-child {
+        border-right-width: 0;
+    }
+
+    #iniPage .row>.col:first-child>.cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .row>.col>.row:last-child>.cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    @media print {
+        .hilang {
+            visibility: hidden;
+        }
+    }
+
+    h5 {
+        font-size: 12px;
+    }
+
+    .notes {
+        font-size: 12px;
+        border: none;
+        background: none;
+        background-attachment: local;
+        background-image:
+            repeating-linear-gradient(transparent, transparent 11px, black 11px, black 12px, transparent 12px);
+        line-height: 12px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="d-flex justify-content-end">
+            <h5 class="">RM.13.f.REV.01</h5>
+        </div>
+
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="90px" alt="LOGO">
+            </div>
+            <div class="col col-md-4 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">LAPORAN OPERASI</h3>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-3 px-0 mx-auto py-1">
+                        <label style="margin: 0 0 0 5px;" for="norm">No. RM</label>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input class="input-text col-12" type="text" name="norm" id="norm" value="" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0 mx-auto py-1">
+                        <label style="margin: 0 0 0 5px;" for="nama">Nama</label>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input class="input-text col-12" type="text" name="nama" id="nama" value="" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0 mx-auto py-1" style="height: 100%;">
+                        <label style="margin: 0 0 0 5px;" for="tglLahir">Tgl. Lahir</label>
+                    </div>
+                    <div class="cell col-md-9 inline-block mid px-1">
+                        <input type="text" name="tglLahir" id="tglLahir" class="col-6 px-1 my-0 text-center input-text"
+                            value="" disabled>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="laki" id="laki" value="laki-laki" disabled>
+                            <label class="form-label mx-1" for="laki">L</label>
+                        </div>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="perempuan" id="perempuan" value="perempuan"
+                                disabled>
+                            <label class="form-label mx-1" for="perempuan">P</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <span class="text-center">Waktu</span>
+                </div>
+            </div>
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <span class="text-center">Tanggal Operasi</span>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="row">
+                    <div class="cell col-12 mb-1">
+                        <label for="startOP">Mulai Operasi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: jam</label>
+                        <input type="time" name="startOP" id="startOP" class="input-text">
+                        <span>WIB</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-12 mb-1">
+                        <label for="endOP">Selesai Operasi&nbsp;&nbsp;: jam</label>
+                        <input type="time" name="endOP" id="endOP" class="input-text">
+                        <span>WIB</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="d-flex align-items-center h-100">
+                    <div class="form-group">
+                        <label for="lamaOP">Lama Operasi</label>
+                        <input type="number" name="jamOP" id="jamOP" class="input-text col-2">
+                        <label for="jamOP">jam</label>
+                        <input type="number" name="menitOP" id="menitOP" class="input-text col-2">
+                        <label for="menitOP">menit</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <span class="text-center">Diagnosis</span>
+                </div>
+            </div>
+            <div class="col col-md-10">
+                <div class="row">
+                    <div class="cell col-md-12">
+                        <div class="d-flex align-items-center h-100 px-1 py-1">
+                            <label class="col-md-2" for="preOP">Pre Operasi : </label>
+                            <textarea class="notes col-10" name="preOP" id="preOP" rows="2"
+                                data-min-rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-12">
+                        <div class="d-flex align-items-center h-100 px-1 py-1">
+                            <label class="col-md-2" for="postOP">Post Operasi : </label>
+                            <textarea class="notes col-10" name="postOP" id="postOP" rows="2"
+                                data-min-rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="drOpt">Dokter Operator</label>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <input type="text" name="drOpt" id="drOpt" class="input-text mb-1 col-12">
+            </div>
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="drAn">Dokter Anestesi</label>
+                </div>
+            </div>
+            <div class="col col-md-5">
+                <input type="text" name="drAn" id="drAn" class="input-text mb-1 col-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="drAnk">Dokter Anak</label>
+                </div>
+            </div>
+            <div class="col col-md-10">
+                <input type="text" name="drAnk" id="drAnk" class="input-text mb-1 col-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="ass1">Asisten 1</label>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <input type="text" name="ass1" id="ass1" class="input-text mb-1 col-12">
+            </div>
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="instrument">Instrument</label>
+                </div>
+            </div>
+            <div class="col col-md-2">
+                <input type="text" name="instrument" id="instrument" class="input-text mb-1 col-12">
+            </div>
+            <div class="col col-md-1">
+                <div class="d-flex align-items-center h-100">
+                    <label for="sirkuler">Sirkuler</label>
+                </div>
+            </div>
+            <div class="col col-md-2">
+                <input type="text" name="sirkuler" id="sirkuler" class="input-text mb-1 col-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="ass2">Asisten 2</label>
+                </div>
+            </div>
+            <div class="col col-md-3">
+                <input type="text" name="ass2" id="ass2" class="input-text mb-1 col-12">
+            </div>
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="assAn">Asisten Anestesi</label>
+                </div>
+            </div>
+            <div class="col col-md-5">
+                <input type="text" name="assAn" id="assAn" class="input-text mb-1 col-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <div class="d-flex align-items-center h-100">
+                    <label for="sopOP">Prosedur Operasi / Tindakan</label>
+                </div>
+            </div>
+            <div class="col col-md-10">
+                <textarea class="notes col-12" name="sopOP" id="sopOP" rows="2" data-min-rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="jnsOP">Jenis Operasi</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row align-items-center h-100">
+                    <div class="form-group col-md-5">
+                        <input type="checkbox" name="cito" id="cito" class="mb-1 mx-2">
+                        <label for="cito">Cito</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                        <input type="checkbox" name="elektif" id="elektif" class="mb-1 mx-2">
+                        <label for="elektif">Elektif</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="ktg">Kategori Operasi</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row align-items-center h-100">
+                    <div class="form-group col-md-5">
+                        <input type="checkbox" name="kecil" id="kecil" class="mb-1 mx-2">
+                        <label for="kecil">Kecil</label>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="checkbox" name="sedang" id="sedang" class="mb-1 mx-2">
+                        <label for="sedang">Sedang</label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="checkbox" name="besar" id="besar" class="mb-1 mx-2">
+                        <label for="besar">Besar</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="komplikasi">Komplikasi Operasi</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row align-items-center h-100">
+                    <div class="form-group col-md-5">
+                        <input type="checkbox" name="kompYA" id="kompYA" class="mb-1 mx-2">
+                        <label for="kompYA">Ya</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                        <input type="checkbox" name="kompNO" id="kompNO" class="mb-1 mx-2">
+                        <label for="kompNO">Tidak</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="penyulit">Penyulit</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row align-items-center h-100">
+                    <div class="form-group col-md-5">
+                        <input type="checkbox" name="penyulitYA" id="penyulitYA" class="mb-1 mx-2">
+                        <label for="penyulitYA">Ya</label>
+                    </div>
+                    <div class="form-group col-md-7">
+                        <input type="checkbox" name="penyulitNO" id="penyulitNO" class="mb-1 mx-2">
+                        <label for="penyulitNO">Tidak</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="perdarahan">Jumlah Perdarahan</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <input type="text" name="perdarahan" id="perdarahan" class="input-text col-12 mb-1 mx-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="totalPerdarahan">Jumlah darah yang masuk melalui transfusi</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <input type="text" name="totalPerdarahan" id="totalPerdarahan" class="input-text col-12 mb-1 mx-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="spesimen">spesimen</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="row align-items-center h-100">
+                    <div class="form-group col-md-9">
+                        <input type="checkbox" name="spesimenYA" id="spesimenYA" class="mb-1 mx-2">
+                        <label for="spesimenYA">Ya : </label>
+                        <input type="text" name="spesimenText" id="spesimenText" class="input-text col-9 mb-1">
+
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="checkbox" name="spesimenNO" id="spesimenNO" class="mb-1 mx-2">
+                        <label for="spesimenNO">Tidak</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="d-flex align-items-center h-100">
+                    <label for="noUID">Nomor pendaftaran UID yang dipasang</label>
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <input type="text" name="noUID" id="noUID" class="input-text col-12 mb-1 mx-2">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="form-group">
+                    <h6 class="text-center">URAIAN JALANNYA OPERASI</h6>
+                    <textarea class="notes col-12" name="uraian" id="uraian" rows="10" data-min-rows="10"></textarea>
+                </div>
+
+                <div class="d-flex justify-content-end mt-5 mb-3">
+                    <div class="form-group mt-2 text-center">
+                        <label class="mid" for="ttd_drOpt">Dokter Operator</label>
+                        <div class="inline-block">
+                            <span>(</span>
+                            <input type="text" name="ttd_drOpt" id="ttd_drOpt" class="col-8 mt-5 input-text">
+                            <span>)</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        document.addEventListener('input', onExpandableTextareaInput);
+
+        function getScrollHeight(elm) {
+            var savedValue = elm.value
+            elm.value = ''
+            elm._baseScrollHeight = elm.scrollHeight
+            elm.value = savedValue
+        }
+
+        function onExpandableTextareaInput({
+            target: elm
+        }) {
+
+            if (!elm.classList.contains('notes') || !elm.nodeName == 'TEXTAREA') return
+
+            var minRows = elm.getAttribute('data-min-rows') | 0,
+                rows;
+            !elm._baseScrollHeight && getScrollHeight(elm)
+
+            elm.rows = minRows
+            rows = Math.ceil((elm.scrollHeight - elm._baseScrollHeight) / 16)
+            elm.rows = minRows + rows
+        }
+        const inputTanggal = document.querySelector("#waktu");
+        let date = new Date(inputTanggal.value);
+        let formattedDate = "";
+
+        // Definisikan options di luar event listener
+        const options = {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        };
+
+        inputTanggal.addEventListener("change", function () {
+            date = new Date(inputTanggal.value);
+            formattedDate = date.toLocaleDateString("id-ID", options);
+            console.log(formattedDate);
+        });
+
+        inputTanggal.addEventListener("focus", function () {
+            inputTanggal.type = "date";
+            inputTanggal.value = date.toISOString().slice(0, 10); // Ubah slice menjadi 10
+        });
+
+        inputTanggal.addEventListener("blur", function () {
+            inputTanggal.type = "text";
+            const d = new Date(inputTanggal.value);
+            formattedDate = d.toLocaleDateString("id-ID", options);
+            inputTanggal.value = formattedDate;
+        });
+
+
+    </script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

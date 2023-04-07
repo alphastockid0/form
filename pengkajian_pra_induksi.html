@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Persiapan Operasi</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="HTML/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Datatable -->
+    <link href="HTML/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="HTML/css/select.dataTables.min.css" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="HTML/vendor/select2/css/select2.min.css">
+    <!-- Form step -->
+    <link href="HTML/vendor/jquery-steps/css/jquery.steps.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet">
+    <link href="HTML/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="HTML/css/jquery-ui.css" rel="stylesheet">
+    <link href="HTML/vendor/toastr/css/toastr.min.css" rel="stylesheet">
+    <link href="HTML/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="HTML/css/easy-autocomplete.css" rel="stylesheet">
+    <link href="HTML/css/selectize.css" rel="stylesheet">
+    <link rel="stylesheet" href="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.css">
+    <link href="HTML/css/style.css" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        font-size: 10px;
+    }
+
+    .input-text {
+        height: 16px;
+        border: none;
+        border-bottom: 1px dotted black;
+        background: #ffffff00;
+    }
+
+    .mid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #iniPage {
+        padding: 20px;
+    }
+
+    #iniPage .col {
+        border: 1px solid #000000;
+    }
+
+    #iniPage .col:not(:last-child) {
+        border-right-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .col {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .inner>.col:first-child {
+        border-left-width: 0;
+        border-top-width: 0;
+    }
+
+    #iniPage .inner>.col:last-child {
+        border-right-width: 0;
+        border-bottom-width: 0;
+    }
+
+    #iniPage .form-group,
+    label,
+    .input-group {
+        margin: 0;
+    }
+
+    #iniPage .cell {
+        margin: 0;
+        padding-left: 10px;
+        border: 1px solid #000000;
+        border-left-width: 0;
+    }
+
+    #iniPage .row:not(:last-child) .cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage .row:first-child .cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .cell:last-child {
+        border-right-width: 0;
+    }
+
+    #iniPage .row>.col:first-child>.cell {
+        border-top-width: 0;
+    }
+
+    #iniPage .row>.col>.row:last-child>.cell {
+        border-bottom-width: 0;
+    }
+
+    #iniPage h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    @media print {
+        .hilang {
+            visibility: hidden;
+        }
+    }
+
+    h5 {
+        font-size: 12px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid" id="iniPage">
+        <div class="d-flex justify-content-end">
+            <h5 class="">RM.13.c</h5>
+        </div>
+        <div class="row">
+            <div class="col col-md-2 text-center mid">
+                <img class="mx-2 my-2" src="HTML/images/logo-hitam.png" width="100px" alt="LOGO">
+            </div>
+            <div class="col col-md-4 px-0 mx-0 mid">
+                <h3 class="fw-1 text-center">PENGKAJIAN PRA INDUKSI</h3>
+            </div>
+            <div class="col col-md-6">
+                <div class="row">
+                    <div class="cell col-md-3 px-0 mx-auto py-1">
+                        <label style="margin: 0 0 0 5px;" for="norm">No. RM</label>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input class="input-text col-12" type="text" name="norm" id="norm" value="" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0 mx-auto py-1">
+                        <label style="margin: 0 0 0 5px;" for="nama">Nama</label>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input class="input-text col-12" type="text" name="nama" id="nama" value="" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0 mx-auto py-1">
+                        <label style="margin: 0 0 0 5px;" for="tglLahir">Tgl. Lahir</label>
+                    </div>
+                    <div class="cell col-md-9 inline-block mid px-1">
+                        <input type="text" name="tglLahir" id="tglLahir" class="col-6 px-1 my-0 text-center input-text"
+                            value="" disabled>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="laki" id="laki" value="laki-laki" disabled>
+                            <label class="form-label mx-1" for="laki">L</label>
+                        </div>
+                        <div class="mx-0 my-0 px-0 col-3 py-1">
+                            <input class="mx-1" type="checkbox" name="perempuan" id="perempuan" value="perempuan"
+                                disabled>
+                            <label class="form-label mx-1" for="perempuan">P</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <div class="row">
+                    <div class="cell col-md-6">
+                        <label for="ruang">Ruang : </label>
+                        <input type="text" name="ruang" id="ruang" class="input-text col-8">
+                    </div>
+                    <div class="cell col-md-6">
+                        <label for="dokter">Dokter : </label>
+                        <input type="text" name="dokter" id="dokter" class="input-text col-8">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="row" style="height: 100%;">
+                    <div class="cell col-md-2 text-center">1.</div>
+                    <div class="cell col-md-10 mx-0 px-1">Rencana Pembedahan</div>
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <div class="d-flex inline-block">
+                            <span class="mx-1" style="width: 10px;">a</span>
+                            <input type="checkbox" name="ctgl" id="tgl" class="my-1 mx-2">
+                            <label
+                                for="ctgl">Tanggal&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;:&nbsp;</label>
+                            <input type="date" name="tgl" id="tgl" class="input-text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <div class="d-flex inline-block">
+                            <span class="mx-1" style="width: 10px;">b</span>
+                            <input type="checkbox" name="cdokterOpt" id="dokterOpt" class="my-1 mx-2">
+                            <label for="cdokterOpt">Dokter Operator&emsp;&emsp;&nbsp;:&nbsp;</label>
+                            <input type="text" name="dokterOpt" id="dokterOpt" class="input-text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <div class="d-flex inline-block">
+                            <span class="mx-1" style="width: 10px;">c</span>
+                            <input type="checkbox" name="cdrAn" id="drAn" class="my-1 mx-2">
+                            <label for="cdrAn">Dokter Anestesi&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                            <input type="text" name="drAn" id="drAn" class="input-text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell form-group col-12">
+                        <div class="d-flex inline-block">
+                            <span class="mx-1" style="width: 10px;">d</span>
+                            <input type="checkbox" name="cdiagAwal" id="diagAwal" class="my-1 mx-2">
+                            <label for="cdiagAwal">Diagnosis
+                                Awal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;:&nbsp;</label>
+                            <input type="text" name="diagAwal" id="diagAwal" class="input-text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-12">
+                        <div class="d-flex inline-block">
+                            <div class="form-group col-4 px-0 d-block">
+                                <span class="mx-1" style="width: 10px;">e</span>
+                                <input type="checkbox" name="cRencanaTindakan" id="RencanaTindakan" class="my-1 mx-2">
+                                <label for="cRencanaTindakan">Rencana Tindakan&nbsp;&nbsp;&nbsp;:&nbsp;</label>
+                            </div>
+                            <div class="form-group col-4 d-block">
+                                <div class="row">
+                                    <div class="form-group col-6 px-0">
+                                        <input type="checkbox" name="cito" id="cito" class="my-1 mx-2">
+                                        <label for="cito">Cito</label>
+                                    </div>
+                                    <div class="form-group col-6 px-0">
+                                        <input type="checkbox" name="elektif" id="elektif" class="my-1 mx-2">
+                                        <label for="elektif">Elektif</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-12">
+                        <div class="d-flex inline-block">
+                            <div class="form-group col-4 px-0 d-block">
+                                <span class="mx-1" style="width: 10px;">f</span>
+                                <input type="checkbox" name="cSifatOperasi" id="SifatOperasi" class="my-1 mx-2">
+                                <label for="cSifatOperasi">Sifat Operasi&emsp;&emsp;&emsp;&emsp;:&nbsp;</label>
+                            </div>
+                            <div class="form-group col-4 d-block">
+                                <div class="row">
+                                    <div class="form-group col-6 px-0">
+                                        <input type="checkbox" name="Terbuka" id="Terbuka" class="my-1 mx-2">
+                                        <label for="Terbuka">Terbuka</label>
+                                    </div>
+                                    <div class="form-group col-6 px-0">
+                                        <input type="checkbox" name="Tertutup" id="Tertutup" class="my-1 mx-2">
+                                        <label for="Tertutup">Tertutup</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="row" style="height: 100%;">
+                    <div class="cell col-md-2 text-center">2.</div>
+                    <div class="cell col-md-10 mx-0 px-1">Tanda-tanda vital</div>
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="row">
+                    <div class="cell col-md-3 d-block">
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">a</label>
+                            <input type="checkbox" name="ku" id="ku" class="my-1 mx-2">
+                            <label for="ku">KU</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">b</label>
+                            <input type="checkbox" name="TD" id="TD" class="my-1 mx-2">
+                            <label for="TD">TD</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">c</label>
+                            <input type="checkbox" name="HR" id="HR" class="my-1 mx-2">
+                            <label for="HR">HR</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">d</label>
+                            <input type="checkbox" name="RR" id="RR" class="my-1 mx-2">
+                            <label for="RR">RR</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">e</label>
+                            <input type="checkbox" name="SpO2" id="SpO2" class="my-1 mx-2">
+                            <label for="SpO2">SpO2</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">f</label>
+                            <input type="checkbox" name="Suhu" id="Suhu" class="my-1 mx-2">
+                            <label for="Suhu">Suhu</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">g</label>
+                            <input type="checkbox" name="BB" id="BB" class="my-1 mx-2">
+                            <label for="BB">BB</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">h</label>
+                            <input type="checkbox" name="TB" id="TB" class="my-1 mx-2">
+                            <label for="TB">TB</label>
+                        </div>
+                        <div class="form-group" style="height: 24px;">
+                            <label style="width: 10px;" class="mx-1">i</label>
+                            <input type="checkbox" name="ASA" id="ASA" class="my-1 mx-2">
+                            <label for="ASA">ASA</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9 d-block">
+                        <div class="d-flex inline-block" style="height: 24px;">
+                            <div class="form-group mx-0">
+                                <input type="checkbox" name="sadarPenuh" id="sadarPenuh" class="my-1 mx-2">
+                                <label for="sadarPenuh">Sadar Penuh</label>
+                            </div>
+                            <div class="form-group mx-0">
+                                <input type="checkbox" name="Bingung" id="Bingung" class="my-1 mx-2">
+                                <label for="Bingung">Bingung</label>
+                            </div>
+                            <div class="form-group mx-0">
+                                <input type="checkbox" name="agitasi" id="agitasi" class="my-1 mx-2">
+                                <label for="agitasi">Agitasi</label>
+                            </div>
+                            <div class="form-group mx-0">
+                                <input type="checkbox" name="mengantuk" id="mengantuk" class="my-1 mx-2">
+                                <label for="mengantuk">Mengantuk</label>
+                            </div>
+                            <div class="form-group mx-0">
+                                <input type="checkbox" name="koma" id="koma" class="my-1 mx-2">
+                                <label for="koma">Koma</label>
+                            </div>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="mmHg" id="mmHg" class="input-text my-1 mx-2">
+                            <label for="mmHg">mmHg</label>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="hrv" id="hrv" class="input-text my-1 mx-2">
+                            <label for="hrv">x/menit</label>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="rrv" id="rrv" class="input-text my-1 mx-2">
+                            <label for="rrv">x/menit</label>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="spo2v" id="spo2v" class="input-text my-1 mx-2">
+                            <label for="spo2v">%</label>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="suhuv" id="suhuv" class="input-text my-1 mx-2">
+                            <label for="suhuv">&deg;C</label>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="bbv" id="bbv" class="input-text my-1 mx-2">
+                            <label for="bbv">Kg</label>
+                        </div>
+                        <div class="form-group mx-3" style="height: 24px;">
+                            <input type="text" name="tbv" id="tbv" class="input-text my-1 mx-2">
+                            <label for="tbv">Cm</label>
+                        </div>
+                        <div class="d-flex inline-block" style="height: 24px;">
+                            <div class="form-group mx-2">
+                                <input type="checkbox" name="asa1" id="asa1" class="my-1 mx-2">
+                                <label for="asa1">1</label>
+                            </div>
+                            <div class="form-group mx-2">
+                                <input type="checkbox" name="asa2" id="asa2" class="my-1 mx-2">
+                                <label for="asa2">2</label>
+                            </div>
+                            <div class="form-group mx-2">
+                                <input type="checkbox" name="asa3" id="asa3" class="my-1 mx-2">
+                                <label for="asa3">3</label>
+                            </div>
+                            <div class="form-group mx-2">
+                                <input type="checkbox" name="asa4" id="asa4" class="my-1 mx-2">
+                                <label for="asa4">4</label>
+                            </div>
+                            <div class="form-group mx-2">
+                                <input type="checkbox" name="asa5" id="asa5" class="my-1 mx-2">
+                                <label for="asa5">5</label>
+                            </div>
+                            <div class="form-group mx-2">
+                                <input type="checkbox" name="asa6" id="asa6" class="my-1 mx-2">
+                                <label for="asa6">6</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="row" style="height: 100%;">
+                    <div class="cell col-md-2 text-center">3.</div>
+                    <div class="cell col-md-10 mx-0 px-1">Pemeriksaan Fisik</div>
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="row">
+                    <div class="cell col-md-3 px-0">
+                        <div class="form-group">
+                            <label for="jantung">1. jantung</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input type="text" name="jantung" id="jantung" class="input-text my-1 mx-2 col-10">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0">
+                        <div class="form-group">
+                            <label for="paru">2. Paru</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input type="text" name="paru" id="paru" class="input-text my-1 mx-2 col-10">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0">
+                        <div class="form-group">
+                            <label for="MGjN">3. Mulut,Gigi,dan jalan Nafas</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input type="text" name="MGjN" id="MGjN" class="input-text my-1 mx-2 col-10">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0">
+                        <div class="form-group">
+                            <label for="Ekstremitas">4. Ekstremitas</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input type="text" name="Ekstremitas" id="Ekstremitas" class="input-text my-1 mx-2 col-10">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3 px-0">
+                        <div class="form-group">
+                            <label for="Lainlain">5. Lain-lain</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input type="text" name="Lainlain" id="Lainlain" class="input-text my-1 mx-2 col-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="row" style="height: 100%;">
+                    <div class="cell col-md-2 text-center">4.</div>
+                    <div class="cell col-md-10 mx-0 px-1">Pemeriksaan Penunjang</div>
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="row">
+                    <div class="cell col-md-3">
+                        <div class="form-group">
+                            <label for="laborat">Laborat</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <div class="row mt-2">
+                            <div class="col-md-3 mx-2 px-0">
+                                <input type="checkbox" name="labHB" id="labHB" class="form-input mx-1">
+                                <label for="labHB">Hb</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labBt" id="labBt" class="form-input mx-1">
+                                <label for="labBt">Bt</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labCT" id="labCT" class="form-input mx-1">
+                                <label for="labCT">CT</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labPTapt" id="labPTapt" class="form-input mx-1">
+                                <label for="labPTapt">PT/APT</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labUreum" id="labUreum" class="form-input mx-1">
+                                <label for="labUreum">Ureum</label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3 mx-2 px-0">
+                                <input type="checkbox" name="labCreatin" id="labCreatin" class="form-input mx-1">
+                                <label for="labCreatin">Creatin</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labGolDar" id="labGolDar" class="form-input mx-1">
+                                <label for="labGolDar">GolDar</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labLeukosit" id="labLeukosit" class="form-input mx-1">
+                                <label for="labLeukosit">Leukosit</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labHbsAg" id="labHbsAg" class="form-input mx-1">
+                                <label for="labHbsAg">HbsAg</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labBGA" id="labBGA" class="form-input mx-1">
+                                <label for="labBGA">BGA</label>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-3 mx-2 px-0">
+                                <input type="checkbox" name="labLainlain" id="labLainlain" class="form-input mx-1">
+                                <label for="labLainlain">Lain-lain</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labAntiHAV" id="labAntiHAV" class="form-input mx-1">
+                                <label for="labAntiHAV">Anti HAV</label>
+                            </div>
+                            <div class="col-md-2 mx-0 px-0">
+                                <input type="checkbox" name="labAntiHIV" id="labAntiHIV" class="form-input mx-1">
+                                <label for="labAntiHIV">Anti HIV</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3">
+                        <div class="form-group">
+                            <label for="Penunjanglain">Penunjang lain</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <div class="d-flex inline-block">
+                            <div class="form-group mx-auto">
+                                <input type="checkbox" name="labECG" id="labECG" class="mx-0">
+                                <label for="labECG">ECG</label>
+                            </div>
+                            <div class="form-group mx-auto">
+                                <input type="checkbox" name="labEcho" id="labEcho" class="mx-0">
+                                <label for="labEcho">Echo</label>
+                            </div>
+                            <div class="form-group mx-auto">
+                                <input type="checkbox" name="labUSG" id="labUSG" class="mx-0">
+                                <label for="labUSG">USG</label>
+                            </div>
+                            <div class="form-group mx-auto">
+                                <input type="checkbox" name="labRontgen" id="labRontgen" class="mx-0">
+                                <label for="labRontgen">Rontgen</label>
+                            </div>
+                            <div class="form-group mx-auto">
+                                <input type="checkbox" name="labMRI" id="labMRI" class="mx-0">
+                                <label for="labMRI">MRI</label>
+                            </div>
+                            <div class="form-group mx-auto">
+                                <input type="checkbox" name="labScan" id="labScan" class="mx-0">
+                                <label for="labScan">Scan</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="row" style="height: 100%;">
+                    <div class="cell col-md-2 text-center">5.</div>
+                    <div class="cell col-md-10 mx-0 px-1">Premedikasi</div>
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="row">
+                    <div class="cell col-md-3">
+                        <div class="form-group">
+                            <label for="waktu">Hari/Tanggal/Jam</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <div class="d-flex inline-block">
+                            <input type="date" step="1" name="waktu" id="waktu" class="input-text">
+                            <div class="form-group">
+                                <label for="preJAm">Pukul</label>
+                                <input type="time" name="preJAm" id="preJAm" class="input-text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell col-md-3">
+                        <div class="form-group">
+                            <label for="jenisObat">jenis Obat</label>
+                        </div>
+                    </div>
+                    <div class="cell col-md-9">
+                        <input type="text" name="jenisObat" id="jenisObat" class="input-text col-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-3">
+                <div class="row" style="height: 100%;">
+                    <div class="cell col-md-2 text-center">6.</div>
+                    <div class="cell col-md-10 mx-0 px-1">Persiapan Khusus</div>
+                </div>
+            </div>
+            <div class="col col-md-9">
+                <div class="row">
+                    <div class="cell col-md-3">
+                        <textarea name="textpersiapanKhusus" id="textpersiapanKhusus" style="width: 100%;"
+                            rows="5"></textarea>
+                    </div>
+                    <div class="cell col-md-9">
+                        <textarea name="deskpersiapanKhusus" id="deskpersiapanKhusus" style="width: 100%;"
+                            rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-end mb-3">
+                    <div class="form-group mt-2 text-center">
+                        <label class="mid" for="ttd_drAn ">Dokter Anestesi</label>
+                        <div class="inline-block">
+                            <span>(</span>
+                            <input type="text" name="ttd_drAn " id="ttd_drAn" class="col-8 mt-5 input-text">
+                            <span>)</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="HTML/vendor/global/global.min.js"></script>
+    <script src="HTML/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="HTML/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="HTML/js/custom.min.js"></script>
+    <script src="HTML/js/deznav-init.js"></script>
+    <script src="HTML/vendor/owl-carousel/owl.carousel.js"></script>
+    <!-- Datatable -->
+    <script src="HTML/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="HTML/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="HTML/vendor/datatables/js/dataTables.checkboxes.min.js"></script>
+    <script src="HTML/js/jquery-ui.js"></script>
+    <script src="HTML/vendor/moment/moment.min.js"></script>
+    <script src="HTML/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script src="HTML/vendor/toastr/js/toastr.min.js"></script>
+    <script src="HTML/vendor/select2/js/select2.full.min.js"></script>
+    <script src="HTML/js/jquery.easy-autocomplete.js"></script>
+    <script src="HTML/js/selectize.js"></script>
+    <script src="HTML/timepicker/dist/jquery-ui-timepicker-addon.min.js"></script>
+    <script src="HTML/js/jquery.tabledit.js"></script>
+    <script src="HTML/vendor/apexchart/apexchart.js"></script>
+    <script src="HTML/js/tag-input.js"></script>
+    <script>
+        const inputTanggal = document.querySelector("#waktu");
+        let date = new Date(inputTanggal.value);
+        let formattedDate = "";
+
+        // Definisikan options di luar event listener
+        const options = {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        };
+
+        inputTanggal.addEventListener("change", function () {
+            date = new Date(inputTanggal.value);
+            formattedDate = date.toLocaleDateString("id-ID", options);
+            console.log(formattedDate);
+        });
+
+        inputTanggal.addEventListener("focus", function () {
+            inputTanggal.type = "date";
+            inputTanggal.value = date.toISOString().slice(0, 10); // Ubah slice menjadi 10
+        });
+
+        inputTanggal.addEventListener("blur", function () {
+            inputTanggal.type = "text";
+            const d = new Date(inputTanggal.value);
+            formattedDate = d.toLocaleDateString("id-ID", options);
+            inputTanggal.value = formattedDate;
+        });
+
+
+    </script>
+    <script>
+        (function ($) {
+            var table = $('#example5').DataTable({
+                searching: false,
+                paging: true,
+                select: false,
+                //info: false,         
+                lengthChange: false
+
+            });
+            $('#example tbody').on('click', 'tr', function () {
+                var data = table.row(this).data();
+
+            });
+
+            Date.getFormattedDateDiff = function (date1, date2) {
+                var b = moment(date1),
+                    a = moment(date2),
+                    intervals = ['weeks', 'days'],
+                    interval = ['mg', 'hr'],
+                    out = [];
+
+                for (var i = 0; i < intervals.length; i++) {
+                    var diff = a.diff(b, intervals[i]);
+                    b.add(diff, intervals[i]);
+                    out.push(diff + ' ' + interval[i]);
+                }
+                return out.join(' + ');
+            };
+
+            $(".inputdate").datepicker({
+                dateFormat: "dd/mm/yy",
+                changeMonth: !0,
+                changeYear: !0,
+                yearRange: "-100:+20"
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

@@ -245,13 +245,13 @@
         <div class="row">
             <div class="col col-md-8">
                 <div class="row">
-                    <div id="kategori" aria-selected="false" class="cell atend col-md-6 mid">
+                    <div id="aldrette" onclick="kategori(this.id)" aria-selected="false" class="cell atend col-md-6 mid">
                         <h5 class="text-center">
                             <label for="aldrette-score">ALDRETTE SCORE (DEWASA)</label>
                         </h5>
                         <input type="hidden" id="aldrette-score" name="aldrette" value="1">
                     </div>
-                    <div id="kategori" aria-selected="false" class="cell atend col-md-6 mid">
+                    <div id="steward" onclick="kategori(this.id)" aria-selected="false" class="cell atend col-md-6 mid">
                         <h5 class="text-center">
                             <label for="steward-score">STEWARD SCORE (DEWASA)</label>
                         </h5>
@@ -579,19 +579,24 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <h6 class="text-center">
+                    Penanggungjawab Ruang Pemulihan
+                </h6>
+            </div>
+        </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $('#kategori').click(function () {
-                $(this).removeClass('atend');
-                $(this).attr('aria-selected', 'true');
-            });
-        });
-        const charta = document.getElementById('myChart');
+        function kategori(id) {
+            $(this).attr('select') = true;
+            $(this).remove().classList('atend');
+        }
 
+        const charta = document.getElementById('myChart');
         new Chart(charta, {
             type: 'line',
             data: {
